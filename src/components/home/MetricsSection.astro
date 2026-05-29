@@ -15,25 +15,28 @@ const metrics = [
 ];
 ---
 
-<section class="py-32 relative">
+<section class="py-32 sm:py-40 relative">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-[150px]"></div>
+    <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-500/5 rounded-full blur-[200px]"></div>
   </div>
 
   <div class="mx-auto max-w-7xl px-6 relative z-10">
-    <div class="text-center mb-16" data-animate="fade-up">
-      <h2 class="text-4xl sm:text-5xl font-bold">
+    <div class="text-center mb-20" data-animate="fade-up">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
         <span class="text-gradient">{t(locale, 'metrics.heading')}</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate="fade-up-stagger">
-      {metrics.map(({ value, suffix, label }) => (
-        <div class="text-center p-8">
-          <div class="text-6xl sm:text-7xl font-bold text-white mb-4">
-            <span data-animate="counter" data-value={value} data-suffix={suffix}>0{suffix}</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" data-animate="fade-up-stagger">
+      {metrics.map(({ value, suffix, label }, i) => (
+        <div class="text-center p-8 sm:p-12 relative">
+          {i > 0 && (
+            <div class="hidden md:block absolute top-1/2 start-0 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-border to-transparent"></div>
+          )}
+          <div class="text-7xl sm:text-8xl md:text-[7rem] lg:text-[8.5rem] font-extrabold tracking-tighter leading-none mb-4">
+            <span class="text-shimmer" data-animate="counter" data-value={value} data-suffix={suffix}>0{suffix}</span>
           </div>
-          <p class="text-slate-400 text-lg">{label}</p>
+          <p class="text-slate-400 text-lg sm:text-xl font-medium">{label}</p>
         </div>
       ))}
     </div>

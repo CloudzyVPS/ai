@@ -7,39 +7,53 @@ interface Props {
 }
 
 const { locale } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const services = [
-  { key: 'public_cloud', icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z', gradient: 'from-blue-500 to-cyan-500' },
-  { key: 'private_cloud', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', gradient: 'from-purple-500 to-pink-500' },
-  { key: 'devops', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', gradient: 'from-orange-500 to-red-500' },
-  { key: 'datacenter', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', gradient: 'from-green-500 to-emerald-500' },
-  { key: 'mlops', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', gradient: 'from-violet-500 to-indigo-500' },
+  { key: 'public_cloud', icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z', gradient: 'from-blue-500 to-cyan-400' },
+  { key: 'private_cloud', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', gradient: 'from-violet-500 to-fuchsia-500' },
+  { key: 'devops', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', gradient: 'from-orange-500 to-amber-400' },
+  { key: 'datacenter', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', gradient: 'from-emerald-500 to-green-400' },
+  { key: 'mlops', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', gradient: 'from-rose-500 to-pink-400' },
 ];
 ---
 
-<section id="services" class="py-32 relative">
-  <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center mb-16" data-animate="fade-up">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+<section id="services" class="py-32 sm:py-40 relative">
+  <!-- Background image overlay -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.03]" aria-hidden="true">
+    <img
+      src={`${base}/images/hero/services-overview.jpg`}
+      alt=""
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="text-center mb-20" data-animate="fade-up">
+      <p class="text-sm font-semibold text-accent-400 uppercase tracking-[0.2em] mb-4">
+        {t(locale, 'nav.services')}
+      </p>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
         <span class="text-gradient">{t(locale, 'services.heading')}</span>
       </h2>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+      <p class="text-xl sm:text-2xl text-slate-400 max-w-2xl mx-auto font-light">
         {t(locale, 'services.subtitle')}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="fade-up-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" data-animate="fade-up-stagger">
       {services.map(({ key, icon, gradient }) => (
-        <div class="group glass rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-500/10 hover:border-border-hover">
-          <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}>
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+        <div class="group glass glow-card rounded-3xl p-8 sm:p-10 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-accent-500/10">
+          <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}>
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d={icon} />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">
+          <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">
             {t(locale, `services.${key}.title`)}
           </h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
+          <p class="text-base text-slate-400 leading-relaxed">
             {t(locale, `services.${key}.description`)}
           </p>
         </div>

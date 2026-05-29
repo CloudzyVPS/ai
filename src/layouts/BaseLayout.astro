@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <meta name="description" content={description ?? ''} />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 
-    <link rel="preload" href={`${base}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={`${base}/fonts/plus-jakarta-sans-variable.woff2`} as="font" type="font/woff2" crossorigin />
     {meta.dir === 'rtl' && (
       <link rel="preload" href={`${base}/fonts/noto-sans-arabic-variable.woff2`} as="font" type="font/woff2" crossorigin />
     )}
@@ -36,7 +36,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <ClientRouter />
   </head>
-  <body class="min-h-screen bg-dark-950 text-slate-200 font-sans antialiased overflow-x-hidden">
+  <body class="min-h-screen bg-dark-950 text-slate-200 font-sans antialiased overflow-x-hidden relative noise-overlay">
     <slot />
 
     <script>
@@ -52,34 +52,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReduced) return;
 
-        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((el) => {
+        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((el, i) => {
           gsap.from(el, {
-            y: 40,
+            y: 60,
             opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            duration: 1,
+            delay: i * 0.08,
+            ease: 'power4.out',
+            filter: 'blur(8px)',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true },
           });
         });
 
         gsap.utils.toArray<HTMLElement>('[data-animate="fade-up-stagger"]').forEach((container) => {
           const children = container.children;
           gsap.from(children, {
-            y: 50,
+            y: 70,
             opacity: 0,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: container, start: 'top 80%', once: true },
+            duration: 0.9,
+            stagger: 0.1,
+            ease: 'power4.out',
+            filter: 'blur(6px)',
+            scrollTrigger: { trigger: container, start: 'top 82%', once: true },
           });
         });
 
         gsap.utils.toArray<HTMLElement>('[data-animate="scale-in"]').forEach((el) => {
           gsap.from(el, {
-            scale: 0.8,
+            scale: 0.85,
             opacity: 0,
-            duration: 0.8,
-            ease: 'back.out(1.7)',
+            duration: 1,
+            ease: 'back.out(1.4)',
+            filter: 'blur(10px)',
             scrollTrigger: { trigger: el, start: 'top 85%', once: true },
           });
         });
@@ -90,9 +94,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           const obj = { val: 0 };
           gsap.to(obj, {
             val: target,
-            duration: 2,
+            duration: 2.5,
             ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true },
             onUpdate: () => {
               el.textContent = Math.round(obj.val) + suffix;
             },
@@ -105,9 +109,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           gsap.set(svgEl, { strokeDasharray: length, strokeDashoffset: length });
           gsap.to(svgEl, {
             strokeDashoffset: 0,
-            duration: 1.5,
+            duration: 2,
             ease: 'power2.inOut',
             scrollTrigger: { trigger: svgEl.closest('section'), start: 'top 70%', once: true },
+          });
+        });
+
+        gsap.utils.toArray<HTMLElement>('[data-animate="parallax"]').forEach((el) => {
+          const speed = parseFloat(el.dataset.speed || '0.2');
+          gsap.to(el, {
+            yPercent: -30 * speed,
+            ease: 'none',
+            scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true },
           });
         });
       }

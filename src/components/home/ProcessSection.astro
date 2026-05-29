@@ -10,46 +10,32 @@ const { locale } = Astro.props;
 const steps = tArray(locale, 'process.steps');
 ---
 
-<section class="py-32 relative overflow-hidden">
+<section class="py-32 sm:py-40 relative overflow-hidden">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center mb-20" data-animate="fade-up">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+    <div class="text-center mb-24" data-animate="fade-up">
+      <p class="text-sm font-semibold text-accent-400 uppercase tracking-[0.2em] mb-4">Process</p>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
         <span class="text-gradient">{t(locale, 'process.heading')}</span>
       </h2>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+      <p class="text-xl sm:text-2xl text-slate-400 max-w-2xl mx-auto font-light">
         {t(locale, 'process.subtitle')}
       </p>
     </div>
 
     <div class="relative">
-      <!-- Connecting line -->
-      <div class="hidden lg:block absolute top-16 start-[10%] end-[10%] h-px" aria-hidden="true">
-        <svg class="w-full h-1" preserveAspectRatio="none">
-          <line
-            x1="0" y1="0" x2="100%" y2="0"
-            stroke="url(#lineGradient)"
-            stroke-width="2"
-            data-animate="draw-line"
-          />
-          <defs>
-            <linearGradient id="lineGradient">
-              <stop offset="0%" stop-color="#3b82f6" />
-              <stop offset="50%" stop-color="#8b5cf6" />
-              <stop offset="100%" stop-color="#06b6d4" />
-            </linearGradient>
-          </defs>
-        </svg>
+      <!-- Connecting line desktop -->
+      <div class="hidden lg:block absolute top-20 start-[10%] end-[10%] h-px" aria-hidden="true">
+        <div class="w-full h-[2px] bg-gradient-to-r from-accent-500 via-glow-purple to-glow-cyan opacity-30"></div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8" data-animate="fade-up-stagger">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6" data-animate="fade-up-stagger">
         {steps.map((step, i) => (
           <div class="relative text-center group">
-            <div class="relative mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-accent-500 to-glow-purple flex items-center justify-center text-white font-bold text-lg mb-6 shadow-lg shadow-accent-500/20 transition-transform group-hover:scale-110">
+            <div class="relative mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-accent-500 to-glow-purple flex items-center justify-center text-white font-extrabold text-2xl sm:text-3xl mb-8 shadow-xl shadow-accent-500/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl group-hover:shadow-accent-500/30">
               {step.number}
-              <div class="absolute inset-0 rounded-full bg-accent-500/20 animate-ping opacity-0 group-hover:opacity-100"></div>
             </div>
-            <h3 class="text-lg font-semibold text-white mb-2">{step.title}</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">{step.description}</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">{step.title}</h3>
+            <p class="text-base text-slate-400 leading-relaxed">{step.description}</p>
           </div>
         ))}
       </div>

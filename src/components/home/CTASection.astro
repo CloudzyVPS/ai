@@ -9,12 +9,12 @@ interface Props {
 const { locale } = Astro.props;
 ---
 
-<section class="py-32 relative">
+<section class="py-32 sm:py-40 relative">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="relative rounded-3xl overflow-hidden" data-animate="scale-in">
+    <div class="relative rounded-[2rem] overflow-hidden" data-animate="scale-in">
       <!-- Animated gradient background -->
       <div class="absolute inset-0 bg-gradient-to-br from-accent-600 via-glow-purple to-glow-cyan animate-gradient opacity-90"></div>
-      <div class="absolute inset-0 bg-dark-950/40"></div>
+      <div class="absolute inset-0 bg-dark-950/30"></div>
 
       <!-- Grid overlay -->
       <div class="absolute inset-0 opacity-10" aria-hidden="true">
@@ -28,20 +28,24 @@ const { locale } = Astro.props;
         </svg>
       </div>
 
-      <div class="relative z-10 py-20 px-8 sm:px-16 text-center">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+      <!-- Glow orbs -->
+      <div class="absolute top-0 start-0 w-72 h-72 bg-white/10 rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-0 end-0 w-72 h-72 bg-white/10 rounded-full blur-[100px]"></div>
+
+      <div class="relative z-10 py-24 sm:py-32 px-8 sm:px-16 text-center">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
           {t(locale, 'cta.heading')}
         </h2>
-        <p class="text-lg text-white/80 mb-10 max-w-xl mx-auto">
+        <p class="text-xl sm:text-2xl text-white/80 mb-12 max-w-xl mx-auto font-light">
           {t(locale, 'cta.subtitle')}
         </p>
         <a
           href={getLocalizedPath(locale, '/contact')}
-          class="inline-flex items-center gap-2 px-10 py-4 rounded-2xl bg-white text-dark-950 font-semibold text-lg hover:bg-slate-100 transition-all hover:-translate-y-1 hover:shadow-2xl"
+          class="group inline-flex items-center gap-3 px-12 py-5 rounded-2xl bg-white text-dark-950 font-bold text-lg sm:text-xl hover:bg-slate-100 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(255,255,255,0.3)] active:scale-95"
         >
           {t(locale, 'cta.button')}
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
       </div>
