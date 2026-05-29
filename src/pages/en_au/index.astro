@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/global/Header.astro';
+import HeroSection from '@components/home/HeroSection.astro';
+import TrustedBySection from '@components/home/TrustedBySection.astro';
+import ServicesSection from '@components/home/ServicesSection.astro';
+import MetricsSection from '@components/home/MetricsSection.astro';
+import ProcessSection from '@components/home/ProcessSection.astro';
+import WhyChooseUsSection from '@components/home/WhyChooseUsSection.astro';
+import FAQSection from '@components/home/FAQSection.astro';
+import CTASection from '@components/home/CTASection.astro';
+import Footer from '@components/global/Footer.astro';
+import { t } from '@i18n/utils';
+
+const locale = 'en_au' as const;
+---
+
+<BaseLayout locale={locale} title={t(locale, 'meta.title')} description={t(locale, 'meta.description')}>
+  <Header locale={locale} />
+  <main>
+    <HeroSection locale={locale} />
+    <TrustedBySection locale={locale} />
+    <ServicesSection locale={locale} />
+    <MetricsSection locale={locale} />
+    <ProcessSection locale={locale} />
+    <WhyChooseUsSection locale={locale} />
+    <FAQSection locale={locale} />
+    <CTASection locale={locale} />
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

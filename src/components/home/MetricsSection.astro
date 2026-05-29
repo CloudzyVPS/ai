@@ -1,0 +1,41 @@
+---
+import type { Locale } from '@i18n/config';
+import { t } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const metrics = [
+  { key: 'vms', value: t(locale, 'metrics.vms.value'), suffix: t(locale, 'metrics.vms.suffix'), label: t(locale, 'metrics.vms.label') },
+  { key: 'satisfaction', value: t(locale, 'metrics.satisfaction.value'), suffix: t(locale, 'metrics.satisfaction.suffix'), label: t(locale, 'metrics.satisfaction.label') },
+  { key: 'users', value: t(locale, 'metrics.users.value'), suffix: t(locale, 'metrics.users.suffix'), label: t(locale, 'metrics.users.label') },
+];
+---
+
+<section class="py-32 relative">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-[150px]"></div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-bold">
+        <span class="text-gradient">{t(locale, 'metrics.heading')}</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate="fade-up-stagger">
+      {metrics.map(({ value, suffix, label }) => (
+        <div class="text-center p-8">
+          <div class="text-6xl sm:text-7xl font-bold text-white mb-4">
+            <span data-animate="counter" data-value={value} data-suffix={suffix}>0{suffix}</span>
+          </div>
+          <p class="text-slate-400 text-lg">{label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

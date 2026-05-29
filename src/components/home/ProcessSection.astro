@@ -1,0 +1,58 @@
+---
+import type { Locale } from '@i18n/config';
+import { t, tArray } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const steps = tArray(locale, 'process.steps');
+---
+
+<section class="py-32 relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="text-center mb-20" data-animate="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+        <span class="text-gradient">{t(locale, 'process.heading')}</span>
+      </h2>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        {t(locale, 'process.subtitle')}
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Connecting line -->
+      <div class="hidden lg:block absolute top-16 start-[10%] end-[10%] h-px" aria-hidden="true">
+        <svg class="w-full h-1" preserveAspectRatio="none">
+          <line
+            x1="0" y1="0" x2="100%" y2="0"
+            stroke="url(#lineGradient)"
+            stroke-width="2"
+            data-animate="draw-line"
+          />
+          <defs>
+            <linearGradient id="lineGradient">
+              <stop offset="0%" stop-color="#3b82f6" />
+              <stop offset="50%" stop-color="#8b5cf6" />
+              <stop offset="100%" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8" data-animate="fade-up-stagger">
+        {steps.map((step, i) => (
+          <div class="relative text-center group">
+            <div class="relative mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-accent-500 to-glow-purple flex items-center justify-center text-white font-bold text-lg mb-6 shadow-lg shadow-accent-500/20 transition-transform group-hover:scale-110">
+              {step.number}
+              <div class="absolute inset-0 rounded-full bg-accent-500/20 animate-ping opacity-0 group-hover:opacity-100"></div>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">{step.title}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

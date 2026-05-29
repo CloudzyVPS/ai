@@ -1,0 +1,44 @@
+---
+import type { Locale } from '@i18n/config';
+import { t } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const partners = [
+  'Sig Dept MIE', 'UTFR', 'Ignyte', 'Aurologic', 'Apex', 'Zare', 'Webheads'
+];
+---
+
+<section class="py-20 relative overflow-hidden" data-animate="fade-up">
+  <div class="mx-auto max-w-7xl px-6 mb-10">
+    <p class="text-center text-sm text-slate-500 uppercase tracking-widest font-medium">
+      {t(locale, 'trusted_by.heading')}
+    </p>
+  </div>
+
+  <div class="relative">
+    <div class="absolute inset-y-0 start-0 w-32 bg-gradient-to-e from-dark-950 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute inset-y-0 end-0 w-32 bg-gradient-to-s from-dark-950 to-transparent z-10 pointer-events-none"></div>
+
+    <div class="flex overflow-hidden" aria-hidden="true">
+      <div class="flex shrink-0 items-center gap-16 animate-marquee hover:[animation-play-state:paused]">
+        {[...partners, ...partners].map((name) => (
+          <div class="flex items-center justify-center px-8 py-4">
+            <span class="text-xl font-semibold text-slate-600 whitespace-nowrap tracking-wide">{name}</span>
+          </div>
+        ))}
+      </div>
+      <div class="flex shrink-0 items-center gap-16 animate-marquee hover:[animation-play-state:paused]" aria-hidden="true">
+        {[...partners, ...partners].map((name) => (
+          <div class="flex items-center justify-center px-8 py-4">
+            <span class="text-xl font-semibold text-slate-600 whitespace-nowrap tracking-wide">{name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

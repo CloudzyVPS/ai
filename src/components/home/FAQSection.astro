@@ -1,0 +1,66 @@
+---
+import type { Locale } from '@i18n/config';
+import { t, tArray } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const items = tArray(locale, 'faq.items');
+---
+
+<section id="faq" class="py-32 relative">
+  <div class="mx-auto max-w-3xl px-6">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-bold">
+        <span class="text-gradient">{t(locale, 'faq.heading')}</span>
+      </h2>
+    </div>
+
+    <div class="space-y-4" data-animate="fade-up-stagger">
+      {items.map((item, i) => (
+        <div class="glass rounded-2xl overflow-hidden faq-item">
+          <button
+            class="w-full flex items-center justify-between p-6 text-start cursor-pointer"
+            aria-expanded="false"
+            data-faq-trigger
+          >
+            <span class="text-lg font-medium text-white pe-4">{item.question}</span>
+            <svg class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 faq-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('[data-faq-trigger]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+
+        const content = item.querySelector('.faq-content') as HTMLElement;
+        const chevron = item.querySelector('.faq-chevron') as HTMLElement;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+          content.style.maxHeight = '0';
+          btn.setAttribute('aria-expanded', 'false');
+          chevron.style.transform = 'rotate(0deg)';
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+          chevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>

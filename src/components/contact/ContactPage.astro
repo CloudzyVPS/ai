@@ -1,0 +1,117 @@
+---
+import type { Locale } from '@i18n/config';
+import { t } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const locations = [
+  { city: 'Ogden', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'Dallas', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'Los Angeles', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'New York', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'Miami', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'Las Vegas', country: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+  { city: 'London', country: 'UK', flag: '\u{1F1EC}\u{1F1E7}' },
+  { city: 'Amsterdam', country: 'NL', flag: '\u{1F1F3}\u{1F1F1}' },
+  { city: 'Frankfurt', country: 'DE', flag: '\u{1F1E9}\u{1F1EA}' },
+  { city: 'Bern', country: 'CH', flag: '\u{1F1E8}\u{1F1ED}' },
+  { city: 'Dubai', country: 'AE', flag: '\u{1F1E6}\u{1F1EA}' },
+  { city: 'Singapore', country: 'SG', flag: '\u{1F1F8}\u{1F1EC}' },
+  { city: 'Sydney', country: 'AU', flag: '\u{1F1E6}\u{1F1FA}' },
+];
+---
+
+<section class="pt-32 pb-20 relative">
+  <!-- Background -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/4 end-1/4 w-96 h-96 bg-glow-purple/15 rounded-full blur-[120px] animate-float"></div>
+    <div class="absolute bottom-1/4 start-1/4 w-80 h-80 bg-glow-cyan/10 rounded-full blur-[100px] animate-float" style="animation-delay: -3s;"></div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6 relative z-10">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+        <span class="text-gradient">{t(locale, 'contact.page_title')}</span>
+      </h1>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        {t(locale, 'contact.page_subtitle')}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" data-animate="fade-up-stagger">
+      <!-- Company Info Card -->
+      <div class="glass rounded-2xl p-8 space-y-6">
+        <h2 class="text-2xl font-semibold text-white">{t(locale, 'contact.company_name')}</h2>
+
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-slate-500 mb-1">{t(locale, 'contact.register_label')}</p>
+              <p class="text-white">{t(locale, 'contact.register_no')}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-slate-500 mb-1">{t(locale, 'contact.address_label')}</p>
+              <p class="text-white">{t(locale, 'contact.address')}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-slate-500 mb-1">{t(locale, 'contact.phone_label')}</p>
+              <a href="tel:+971581910073" class="text-white hover:text-accent-400 transition-colors">{t(locale, 'contact.phone')}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-border">
+          <p class="text-sm text-slate-500 mb-3">{t(locale, 'contact.services_label')}</p>
+          <div class="flex flex-wrap gap-2">
+            {['Public Cloud', 'Private Cloud', 'DevOps', 'Data Center', 'MLOps'].map(s => (
+              <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-400 border border-border">{s}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Center Locations Card -->
+      <div class="glass rounded-2xl p-8">
+        <h2 class="text-2xl font-semibold text-white mb-6">Global Data Centers</h2>
+        <div class="grid grid-cols-2 gap-3">
+          {locations.map(loc => (
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
+              <span class="text-lg">{loc.flag}</span>
+              <div>
+                <p class="text-sm font-medium text-white">{loc.city}</p>
+                <p class="text-xs text-slate-500">{loc.country}</p>
+              </div>
+              <div class="ms-auto w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

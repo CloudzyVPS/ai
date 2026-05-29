@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { localeMetadata, type Locale } from '@i18n/config';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout locale="en_us" title="404 — Page Not Found">
+  <div class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+    <h1 class="text-8xl font-bold text-gradient mb-4">404</h1>
+    <p class="text-xl text-slate-400 mb-10">This page doesn't exist or has been moved.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      {Object.entries(localeMetadata).map(([loc, m]) => (
+        <a
+          href={`${base}/${loc}/`}
+          class="glass px-4 py-2 rounded-lg text-sm hover:text-accent-400 transition-colors"
+        >
+          {m.flag} {m.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

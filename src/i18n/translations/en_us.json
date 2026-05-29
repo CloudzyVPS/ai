@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Cloudzy.AI — Your One-Stop Cloud Platform",
+    "description": "Enterprise-grade cloud infrastructure solutions. Public Cloud, Private Cloud, DevOps as a Service, Data Center Services, and MLOps — all under one roof."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your One-Stop Cloud Platform",
+    "subtitle": "Focus on growing your business while we handle the technical complexity. Customizable, cost-effective cloud solutions with a seamless experience.",
+    "cta_primary": "Get Started",
+    "cta_secondary": "Our Services"
+  },
+  "trusted_by": {
+    "heading": "Trusted by Industry Leaders"
+  },
+  "services": {
+    "heading": "Discover the Power of Our Cloud Platform",
+    "subtitle": "How Cloudzy.AI helps you scale, deploy, and innovate faster.",
+    "public_cloud": {
+      "title": "Public Cloud",
+      "description": "Scalable virtual infrastructure on demand. Deploy workloads globally with enterprise-grade reliability and pay only for what you use."
+    },
+    "private_cloud": {
+      "title": "Private Cloud",
+      "description": "Dedicated cloud environments built for compliance and performance. Full control over your infrastructure with zero noisy neighbors."
+    },
+    "devops": {
+      "title": "DevOps as a Service",
+      "description": "Accelerate delivery with our expert DevOps team. CI/CD pipelines, infrastructure as code, and automated workflows — handled for you."
+    },
+    "datacenter": {
+      "title": "Data Center Services",
+      "description": "Colocation and managed hosting across 13 global locations. Low-latency connectivity with 99.99% uptime guarantee."
+    },
+    "mlops": {
+      "title": "MLOps",
+      "description": "End-to-end machine learning operations. From model training to production deployment, we streamline your AI/ML pipeline."
+    }
+  },
+  "metrics": {
+    "heading": "Our Impact in Numbers",
+    "vms": { "value": "10", "suffix": "K+", "label": "Monthly Active Virtual Instances" },
+    "satisfaction": { "value": "99", "suffix": "%", "label": "Client Satisfaction Rate" },
+    "users": { "value": "5", "suffix": "K+", "label": "Monthly Active Users" }
+  },
+  "process": {
+    "heading": "How Does Cloudzy.AI Work?",
+    "subtitle": "A streamlined 5-step methodology to get you from idea to execution.",
+    "steps": [
+      { "number": "01", "title": "Define Your Needs", "description": "Submit your requirements through our online form. Tell us about your workloads, scale, and goals." },
+      { "number": "02", "title": "Meet Our Architects", "description": "Our Solution Architect team reviews your needs and designs a tailored infrastructure blueprint." },
+      { "number": "03", "title": "Contract Agreement", "description": "Transparent pricing with no hidden fees. We finalize terms that work for both sides." },
+      { "number": "04", "title": "Dedicated Team", "description": "A specialized team is assigned to your project — engineers, support, and a dedicated account manager." },
+      { "number": "05", "title": "Execution & Delivery", "description": "We deploy, monitor, and optimize your infrastructure. Continuous improvement is built into our process." }
+    ]
+  },
+  "why_us": {
+    "heading": "Why Choose Cloudzy.AI",
+    "subtitle": "8+ years of delivering cloud excellence across three continents.",
+    "items": [
+      { "title": "8+ Years of Expertise", "description": "Battle-tested infrastructure solutions refined over nearly a decade of serving global clients." },
+      { "title": "Workflow Automation", "description": "Automated provisioning, scaling, and monitoring. Your infrastructure adapts in real-time to demand." },
+      { "title": "Intuitive Interface", "description": "A well-organized control panel that makes complex cloud management feel effortless." },
+      { "title": "Global Infrastructure", "description": "13 data center locations across 3 continents. Low-latency access wherever your users are." }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": [
+      { "question": "What is Cloudzy.AI?", "answer": "Cloudzy.AI is the enterprise division of the Cloudzy group, offering managed cloud infrastructure, DevOps services, and MLOps solutions to businesses of all sizes." },
+      { "question": "What services do you offer?", "answer": "We provide Public Cloud, Private Cloud, DevOps as a Service, Data Center Services, and MLOps — all backed by our global infrastructure spanning 13 locations." },
+      { "question": "Who is Cloudzy.AI for?", "answer": "Our services are designed for businesses, developers, and IT professionals who need reliable, scalable, and cost-effective cloud infrastructure." },
+      { "question": "How do I get started?", "answer": "Simply reach out through our contact page or click 'Get Started' to submit your requirements. Our solution architects will get back to you within 24 hours." },
+      { "question": "Where are your data centers?", "answer": "We operate in 13 locations: Ogden, Dallas, Los Angeles, New York, Miami, Las Vegas (US), London (UK), Amsterdam (NL), Frankfurt (DE), Bern (CH), Dubai (AE), Singapore (SG), and Sydney (AU)." }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Embark on a Successful Partnership?",
+    "subtitle": "Let's build something extraordinary together.",
+    "button": "Get in Touch"
+  },
+  "contact": {
+    "page_title": "Get in Touch",
+    "page_subtitle": "We'd love to hear from you. Reach out and let's discuss how we can help.",
+    "company_name": "Cloudzy AI Information Technology L.L.C",
+    "register_label": "Register No",
+    "register_no": "2312897",
+    "address_label": "Address",
+    "address": "Office No. B20, Khaled Mohammed Building, Horalanz, Dubai, United Arab Emirates",
+    "phone_label": "Phone",
+    "phone": "+971-58-191-0073",
+    "services_label": "Our Services",
+    "services_list": "Public Cloud, Private Cloud, DevOps as a Service, Datacenter Services, MLOps"
+  },
+  "footer": {
+    "description": "Cloudzy.AI is the enterprise cloud division of the Cloudzy group, delivering managed infrastructure solutions globally.",
+    "quick_links": "Quick Links",
+    "copyright": "© 2025 Cloudzy.ai All rights reserved.",
+    "powered_by": "Part of the Cloudzy group"
+  }
+}

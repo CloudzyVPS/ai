@@ -1,0 +1,55 @@
+---
+import type { Locale } from '@i18n/config';
+import { t, getLocalizedPath } from '@i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<footer class="border-t border-border mt-32">
+  <div class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <a href={getLocalizedPath(locale)} class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-500 to-glow-purple flex items-center justify-center text-white font-bold text-sm">
+            C
+          </div>
+          <span class="text-lg font-semibold tracking-tight">
+            Cloudzy<span class="text-accent-400">.AI</span>
+          </span>
+        </a>
+        <p class="text-sm text-slate-500 leading-relaxed max-w-xs">
+          {t(locale, 'footer.description')}
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">{t(locale, 'footer.quick_links')}</h4>
+        <nav class="flex flex-col gap-3">
+          <a href={getLocalizedPath(locale)} class="text-sm text-slate-500 hover:text-accent-400 transition-colors">{t(locale, 'nav.home')}</a>
+          <a href={`${getLocalizedPath(locale)}#services`} class="text-sm text-slate-500 hover:text-accent-400 transition-colors">{t(locale, 'nav.services')}</a>
+          <a href={`${getLocalizedPath(locale)}#faq`} class="text-sm text-slate-500 hover:text-accent-400 transition-colors">{t(locale, 'nav.faq')}</a>
+          <a href={getLocalizedPath(locale, '/contact')} class="text-sm text-slate-500 hover:text-accent-400 transition-colors">{t(locale, 'nav.contact')}</a>
+        </nav>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">{t(locale, 'contact.company_name')}</h4>
+        <div class="flex flex-col gap-3 text-sm text-slate-500">
+          <p>{t(locale, 'contact.address')}</p>
+          <a href="tel:+971581910073" class="hover:text-accent-400 transition-colors">{t(locale, 'contact.phone')}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-600">{t(locale, 'footer.copyright')}</p>
+      <p class="text-xs text-slate-600">
+        {t(locale, 'footer.powered_by')} — <a href="https://cloudzy.com" class="hover:text-accent-400 transition-colors" target="_blank" rel="noopener">Cloudzy.com</a>
+      </p>
+    </div>
+  </div>
+</footer>

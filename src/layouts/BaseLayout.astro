@@ -1,0 +1,118 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { localeMetadata, type Locale } from '@i18n/config';
+import '@styles/global.css';
+
+interface Props {
+  locale: Locale;
+  title?: string;
+  description?: string;
+}
+
+const { locale, title, description } = Astro.props;
+const meta = localeMetadata[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang={meta.htmlLang} dir={meta.dir} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? 'Cloudzy.AI'}</title>
+    <meta name="description" content={description ?? ''} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+
+    <link rel="preload" href={`${base}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+    {meta.dir === 'rtl' && (
+      <link rel="preload" href={`${base}/fonts/noto-sans-arabic-variable.woff2`} as="font" type="font/woff2" crossorigin />
+    )}
+
+    {Object.entries(localeMetadata).map(([loc, m]) => (
+      <link rel="alternate" hreflang={m.htmlLang} href={`${Astro.site}ai/${loc}/`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${Astro.site}ai/en_us/`} />
+
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen bg-dark-950 text-slate-200 font-sans antialiased overflow-x-hidden">
+    <slot />
+
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      function initAnimations() {
+        ScrollTrigger.getAll().forEach(st => st.kill());
+        gsap.globalTimeline.clear();
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+
+        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((el) => {
+          gsap.from(el, {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+          });
+        });
+
+        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up-stagger"]').forEach((container) => {
+          const children = container.children;
+          gsap.from(children, {
+            y: 50,
+            opacity: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: container, start: 'top 80%', once: true },
+          });
+        });
+
+        gsap.utils.toArray<HTMLElement>('[data-animate="scale-in"]').forEach((el) => {
+          gsap.from(el, {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+          });
+        });
+
+        gsap.utils.toArray<HTMLElement>('[data-animate="counter"]').forEach((el) => {
+          const target = parseFloat(el.dataset.value || '0');
+          const suffix = el.dataset.suffix || '';
+          const obj = { val: 0 };
+          gsap.to(obj, {
+            val: target,
+            duration: 2,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            onUpdate: () => {
+              el.textContent = Math.round(obj.val) + suffix;
+            },
+          });
+        });
+
+        document.querySelectorAll('[data-animate="draw-line"]').forEach((el) => {
+          const svgEl = el as SVGPathElement;
+          const length = svgEl.getTotalLength();
+          gsap.set(svgEl, { strokeDasharray: length, strokeDashoffset: length });
+          gsap.to(svgEl, {
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: 'power2.inOut',
+            scrollTrigger: { trigger: svgEl.closest('section'), start: 'top 70%', once: true },
+          });
+        });
+      }
+
+      document.addEventListener('astro:page-load', initAnimations);
+    </script>
+  </body>
+</html>
