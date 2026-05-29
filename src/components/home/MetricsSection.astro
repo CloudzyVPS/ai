@@ -21,13 +21,13 @@ const metrics = [
   </div>
 
   <div class="mx-auto max-w-7xl px-6 relative z-10">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
         <span class="text-gradient">{t(locale, 'metrics.heading')}</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 reveal-stagger">
       {metrics.map(({ value, suffix, label }, i) => (
         <div class="text-center p-8 sm:p-12 relative">
           {i > 0 && (

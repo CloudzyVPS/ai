@@ -25,9 +25,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   <!-- Glow orbs over background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute top-[10%] start-[15%] w-[500px] h-[500px] bg-glow-purple/15 rounded-full blur-[160px]"></div>
-    <div class="absolute top-[20%] end-[10%] w-[450px] h-[450px] bg-glow-blue/10 rounded-full blur-[140px]"></div>
-    <div class="absolute bottom-[20%] start-[40%] w-[400px] h-[400px] bg-glow-cyan/10 rounded-full blur-[130px]"></div>
+    <div class="absolute top-[10%] start-[15%] w-[500px] h-[500px] bg-glow-purple/15 rounded-full blur-[160px] glow-breathe"></div>
+    <div class="absolute top-[20%] end-[10%] w-[450px] h-[450px] bg-glow-blue/10 rounded-full blur-[140px] glow-breathe-2"></div>
+    <div class="absolute bottom-[20%] start-[40%] w-[400px] h-[400px] bg-glow-cyan/10 rounded-full blur-[130px] glow-breathe-3"></div>
   </div>
 
   <!-- Dot grid pattern -->
@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </svg>
   </div>
 
-  <div class="relative z-10 mx-auto max-w-6xl px-6 pt-36 sm:pt-44 pb-24 sm:pb-32 text-center w-full">
+  <div class="relative z-10 mx-auto max-w-6xl px-6 pt-36 sm:pt-44 pb-24 sm:pb-32 text-center w-full hero-animate">
     <!-- Logo badge -->
     <div class="mb-10">
       <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-heavy">

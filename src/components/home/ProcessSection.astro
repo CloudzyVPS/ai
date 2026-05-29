@@ -12,7 +12,7 @@ const steps = tArray(locale, 'process.steps');
 
 <section class="py-16 sm:py-24 relative overflow-hidden">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <p class="text-sm font-semibold text-accent-400 uppercase tracking-[0.2em] mb-4">Process</p>
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
         <span class="text-gradient">{t(locale, 'process.heading')}</span>
@@ -28,7 +28,7 @@ const steps = tArray(locale, 'process.steps');
         <div class="w-full h-[2px] bg-gradient-to-r from-accent-500 via-glow-purple to-glow-cyan opacity-30"></div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6 reveal-stagger">
         {steps.map((step, i) => (
           <div class="relative text-center group">
             <div class="relative mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-accent-500 to-glow-purple flex items-center justify-center text-white font-extrabold text-2xl sm:text-3xl mb-8 shadow-xl shadow-accent-500/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl group-hover:shadow-accent-500/30">

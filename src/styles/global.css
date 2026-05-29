@@ -88,6 +88,63 @@ html[dir="rtl"] {
   background: var(--color-dark-500);
 }
 
+/* ─── Lite animations ─── */
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+/* Hero cascade — pure CSS, fires on load */
+.hero-animate > * {
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-animate > *:nth-child(1) { animation-delay: 120ms; }
+.hero-animate > *:nth-child(2) { animation-delay: 240ms; }
+.hero-animate > *:nth-child(3) { animation-delay: 360ms; }
+.hero-animate > *:nth-child(4) { animation-delay: 460ms; }
+
+/* Scroll reveals — IntersectionObserver adds .in-view */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger grid children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-stagger.in-view > *:nth-child(1) { opacity: 1; transform: none; transition-delay:   0ms; }
+.reveal-stagger.in-view > *:nth-child(2) { opacity: 1; transform: none; transition-delay:  75ms; }
+.reveal-stagger.in-view > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 150ms; }
+.reveal-stagger.in-view > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 225ms; }
+.reveal-stagger.in-view > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 300ms; }
+.reveal-stagger.in-view > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 375ms; }
+
+/* Decorative background glow breathing — compositor-only */
+.glow-breathe   { animation: glow-breathe 16s ease-in-out infinite; }
+.glow-breathe-2 { animation: glow-breathe 20s ease-in-out infinite; animation-delay: -7s; }
+.glow-breathe-3 { animation: glow-breathe 24s ease-in-out infinite; animation-delay: -13s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate > *           { animation: none; opacity: 1; }
+  .reveal, .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
+  .glow-breathe, .glow-breathe-2, .glow-breathe-3 { animation: none; }
+}
 
 /* ─── Glass ─── */
 
