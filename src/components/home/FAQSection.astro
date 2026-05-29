@@ -10,9 +10,9 @@ const { locale } = Astro.props;
 const items = tArray(locale, 'faq.items');
 ---
 
-<section id="faq" class="py-32 sm:py-40 relative">
+<section id="faq" class="py-16 sm:py-24 relative overflow-hidden">
   <div class="mx-auto max-w-4xl px-6">
-    <div class="text-center mb-20" data-animate="fade-up">
+    <div class="text-center mb-12" data-animate="fade-up">
       <p class="text-sm font-semibold text-accent-400 uppercase tracking-[0.2em] mb-4">FAQ</p>
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
         <span class="text-gradient">{t(locale, 'faq.heading')}</span>
