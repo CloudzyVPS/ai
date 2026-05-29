@@ -211,6 +211,7 @@ html[dir="rtl"] {
   -webkit-mask-composite: xor;
   opacity: 0;
   transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
 .glow-card:hover::before {
