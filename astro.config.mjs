@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import node from '@astrojs/node';
 
 export default defineConfig({
   site: 'https://cloudzyvps.github.io',
   base: '/ai/',
   output: 'static',
+  adapter: node({ mode: 'standalone' }),
 
   i18n: {
     defaultLocale: 'en_us',
