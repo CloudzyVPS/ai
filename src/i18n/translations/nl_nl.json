@@ -11,7 +11,7 @@
   },
   "hero": {
     "title": "Uw alles-in-één cloudplatform",
-    "subtitle": "Richt u op de groei van uw bedrijf terwijl wij de technische complexiteit voor onze rekening nemen. Aanpasbare, kostenefficiënte cloudoplossingen met een naadloze ervaring.",
+    "subtitle": "Maak u geen zorgen over de technische kant van uw bedrijf. Wij hebben alles voor u geregeld. Richt u gewoon op uw bedrijf!",
     "cta_primary": "Aan de slag",
     "cta_secondary": "Onze diensten"
   },
@@ -20,69 +20,68 @@
   },
   "services": {
     "heading": "Ontdek de kracht van ons cloudplatform",
-    "subtitle": "Hoe Cloudzy.AI u helpt sneller te schalen, te implementeren en te innoveren.",
+    "subtitle": "Ontdek een wereld vol mogelijkheden met ons geavanceerde cloudplatform. Of u nu een maatoplossing of een kosteneffectief pakket nodig heeft — wij staan voor u klaar.",
     "public_cloud": {
       "title": "Public Cloud",
-      "description": "Schaalbare virtuele infrastructuur op aanvraag. Implementeer workloads wereldwijd met betrouwbaarheid op enterprise-niveau en betaal alleen voor wat u gebruikt."
+      "description": "Ervaar de kracht en flexibiliteit van onze public cloud-oplossingen, ontworpen om uw bedrijf vooruit te helpen in een verbonden wereld."
     },
     "private_cloud": {
       "title": "Private Cloud",
-      "description": "Toegewijde cloudomgevingen gebouwd voor compliance en prestaties. Volledige controle over uw infrastructuur zonder storende buren."
+      "description": "Veilig, betrouwbaar en op maat van uw behoeften — ontdek de gemoedsrust die onze geavanceerde private cloud-diensten bieden."
     },
     "devops": {
       "title": "DevOps as a Service",
-      "description": "Versnel de oplevering met ons deskundige DevOps-team. CI/CD-pipelines, infrastructure as code en geautomatiseerde workflows — wij regelen het."
+      "description": "Stroomlijn uw ontwikkelprocessen en verhoog de efficiëntie met onze uitgebreide DevOps-oplossingen, ontworpen om uw bedrijf een stap voor te houden."
     },
     "datacenter": {
       "title": "Datacenterdiensten",
-      "description": "Colocatie en managed hosting op 13 wereldwijde locaties. Lage latentie met een uptime-garantie van 99,99%."
+      "description": "Benut het volledige potentieel van uw behoeften met onze eersteklas datacenterdiensten, die ongeëvenaarde ondersteuning en infrastructuur bieden voor uw bedrijfskritische activiteiten."
     },
     "mlops": {
       "title": "MLOps",
-      "description": "End-to-end machine learning-operaties. Van modeltraining tot productie-implementatie — wij stroomlijnen uw AI/ML-pipeline."
+      "description": "Implementeer machine learning-modellen op schaal moeiteloos met robuuste operationele processen. Bereik een snellere time-to-market en betrouwbare resultaten met onze uitgebreide MLOps-oplossingen."
     }
   },
   "metrics": {
     "heading": "Onze impact in cijfers",
     "vms": { "value": "10", "suffix": "K+", "label": "Maandelijks actieve virtuele instanties" },
-    "satisfaction": { "value": "99", "suffix": "%", "label": "Klanttevredenheidspercentage" },
+    "satisfaction": { "value": "99", "suffix": "%", "label": "Klantenondersteuning en -tevredenheid" },
     "users": { "value": "5", "suffix": "K+", "label": "Maandelijks actieve gebruikers" }
   },
   "process": {
     "heading": "Hoe werkt Cloudzy.AI?",
-    "subtitle": "Een gestroomlijnde 5-stappenmethodiek om u van idee naar uitvoering te brengen.",
+    "subtitle": "Wij volgen een gestructureerde aanpak om het succes van uw project te garanderen. Hier is een overzicht van ons proces:",
     "steps": [
-      { "number": "01", "title": "Uw behoeften definiëren", "description": "Dien uw vereisten in via ons onlineformulier. Vertel ons over uw workloads, schaal en doelen." },
-      { "number": "02", "title": "Ontmoet onze architecten", "description": "Ons Solution Architect-team beoordeelt uw behoeften en ontwerpt een op maat gemaakte infrastructuurblauwdruk." },
-      { "number": "03", "title": "Contractovereenkomst", "description": "Transparante prijsstelling zonder verborgen kosten. We finaliseren voorwaarden die voor beide partijen werken." },
-      { "number": "04", "title": "Toegewijd team", "description": "Een gespecialiseerd team wordt aan uw project toegewezen — engineers, support en een toegewijde accountmanager." },
-      { "number": "05", "title": "Uitvoering & oplevering", "description": "Wij implementeren, monitoren en optimaliseren uw infrastructuur. Continue verbetering is ingebouwd in ons proces." }
+      { "number": "01", "title": "Uw behoeften definiëren", "description": "Vul ons online formulier in met uw contactgegevens en projectvereisten." },
+      { "number": "02", "title": "Vergadering met ons Solution Architect-team", "description": "Bespreek uw project in detail. We krijgen een uitgebreid inzicht in uw unieke behoeften en verwachtingen." },
+      { "number": "03", "title": "Contractovereenkomst", "description": "We verstrekken een contract met daarin het projectbereik, de deliverables, tijdlijnen en voorwaarden." },
+      { "number": "04", "title": "Toegewijd team", "description": "Dit team kan bestaan uit lokale en/of externe experts, zodat de beste talenten voor u werken." },
+      { "number": "05", "title": "Projectuitvoering en oplevering", "description": "We verstrekken regelmatige updates en vragen om uw inbreng om ervoor te zorgen dat we aan uw verwachtingen voldoen." }
     ]
   },
   "why_us": {
     "heading": "Waarom kiezen voor Cloudzy.AI",
-    "subtitle": "Meer dan 8 jaar cloudexcellentie op drie continenten.",
+    "subtitle": "Wanneer u voor ons kiest, kiest u niet alleen een dienstverlener — u gaat een partnerschap aan met een team van branche-experts die zich inzetten voor uw succes. Met meer dan 8 jaar ervaring in het vakgebied en een bewezen staat van dienst met tevreden klanten.",
     "items": [
-      { "title": "Meer dan 8 jaar ervaring", "description": "Beproefde infrastructuuroplossingen, verfijnd gedurende bijna een decennium van dienstverlening aan wereldwijde klanten." },
-      { "title": "Workflowautomatisering", "description": "Geautomatiseerde provisioning, schaling en monitoring. Uw infrastructuur past zich realtime aan de vraag aan." },
-      { "title": "Intuïtieve interface", "description": "Een overzichtelijk configuratiescherm dat complex cloudbeheer moeiteloos maakt." },
-      { "title": "Wereldwijde infrastructuur", "description": "13 datacenterlocaties op 3 continenten. Toegang met lage latentie, waar uw gebruikers zich ook bevinden." }
+      { "title": "Meer dan 8 jaar expertise", "description": "Beproefde infrastructuuroplossingen, verfijnd gedurende bijna een decennium van dienstverlening aan wereldwijde klanten." },
+      { "title": "Workflowautomatisering", "description": "Geautomatiseerde provisioning, schaling en monitoring — uw infrastructuur past zich realtime aan de vraag aan." },
+      { "title": "Overzichtelijke interface", "description": "Een schoon, goed georganiseerd configuratiescherm dat complex cloudbeheer moeiteloos maakt voor elk team." },
+      { "title": "Wereldwijde infrastructuur", "description": "13 datacenterlocaties op 3 continenten voor toegang met lage latentie, waar uw gebruikers zich ook bevinden." }
     ]
   },
   "faq": {
     "heading": "Veelgestelde vragen",
     "items": [
-      { "question": "Wat is Cloudzy.AI?", "answer": "Cloudzy.AI is de enterprise-divisie van de Cloudzy-groep en biedt beheerde cloudinfrastructuur, DevOps-diensten en MLOps-oplossingen aan bedrijven van elke omvang." },
-      { "question": "Welke diensten bieden jullie aan?", "answer": "Wij bieden Public Cloud, Private Cloud, DevOps as a Service, datacenterdiensten en MLOps — allemaal ondersteund door onze wereldwijde infrastructuur op 13 locaties." },
-      { "question": "Voor wie is Cloudzy.AI?", "answer": "Onze diensten zijn ontworpen voor bedrijven, ontwikkelaars en IT-professionals die betrouwbare, schaalbare en kostenefficiënte cloudinfrastructuur nodig hebben." },
-      { "question": "Hoe ga ik van start?", "answer": "Neem eenvoudig contact met ons op via onze contactpagina of klik op 'Aan de slag' om uw vereisten in te dienen. Onze solution architects nemen binnen 24 uur contact met u op." },
-      { "question": "Waar bevinden zich jullie datacenters?", "answer": "Wij zijn actief op 13 locaties: Ogden, Dallas, Los Angeles, New York, Miami, Las Vegas (VS), Londen (VK), Amsterdam (NL), Frankfurt (DE), Bern (CH), Dubai (AE), Singapore (SG) en Sydney (AU)." }
+      { "question": "Wat is Cloudzy.ai?", "answer": "Cloudzy is een wereldwijde Infrastructure-as-a-Service (IaaS)-provider die schaalbare cloud computing-oplossingen aanbiedt, toegesneden op bedrijven en ontwikkelaars wereldwijd." },
+      { "question": "Welke diensten biedt Cloudzy.ai aan?", "answer": "Cloudzy biedt een breed scala aan diensten, waaronder Public Cloud, Private Cloud, DevOps as a Service, datacenterdiensten en MLOps." },
+      { "question": "Wie kan profiteren van de diensten van Cloudzy?", "answer": "De diensten van Cloudzy zijn ideaal voor bedrijven van elke omvang, ontwikkelaars, IT-professionals en individuen die betrouwbare en schaalbare cloudoplossingen zoeken." },
+      { "question": "Hoe kan ik een aanvraag indienen voor Cloudzy.ai?", "answer": "U kunt een aanvraag indienen door op de knop 'Aan de slag' op onze homepage te klikken en het proces te volgen." }
     ]
   },
   "cta": {
-    "heading": "Klaar om een succesvol partnerschap aan te gaan?",
-    "subtitle": "Laten we samen iets buitengewoons bouwen.",
-    "button": "Neem contact op"
+    "heading": "Klaar om een succesvol partnerschap aan te gaan met Cloudzy.AI?",
+    "subtitle": "Dien vandaag nog uw aanvraag in en laten we beginnen!",
+    "button": "Aanvraag indienen"
   },
   "contact": {
     "page_title": "Neem contact op",
@@ -101,6 +100,6 @@
     "description": "Cloudzy.AI is de enterprise-clouddivisie van de Cloudzy-groep en levert beheerde infrastructuuroplossingen wereldwijd.",
     "quick_links": "Snelkoppelingen",
     "copyright": "© 2025 Cloudzy.ai Alle rechten voorbehouden.",
-    "powered_by": "Onderdeel van de Cloudzy-groep"
+    "powered_by": "Mogelijk gemaakt door"
   }
 }
