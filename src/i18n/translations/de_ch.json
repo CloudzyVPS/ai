@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Cloudzy.AI — Ihre zentrale Cloud-Plattform",
+    "description": "Cloud-Infrastrukturlösungen auf Enterprise-Niveau. Public Cloud, Private Cloud, DevOps as a Service, Rechenzentrumsdienste und MLOps — alles aus einer Hand."
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "faq": "FAQ",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Ihre zentrale Cloud-Plattform",
+    "subtitle": "Konzentrieren Sie sich auf Ihr Geschäftswachstum, während wir die technische Komplexität übernehmen. Anpassbare, kosteneffiziente Cloud-Lösungen mit einem nahtlosen Erlebnis.",
+    "cta_primary": "Jetzt starten",
+    "cta_secondary": "Unsere Leistungen"
+  },
+  "trusted_by": {
+    "heading": "Vertraut von Branchenführern"
+  },
+  "services": {
+    "heading": "Entdecken Sie die Leistungsfähigkeit unserer Cloud-Plattform",
+    "subtitle": "Wie Cloudzy.AI Ihnen hilft, schneller zu skalieren, bereitzustellen und zu innovieren.",
+    "public_cloud": {
+      "title": "Public Cloud",
+      "description": "Skalierbare virtuelle Infrastruktur auf Abruf. Stellen Sie Workloads weltweit bereit — mit Enterprise-Zuverlässigkeit und nutzungsbasierter Abrechnung."
+    },
+    "private_cloud": {
+      "title": "Private Cloud",
+      "description": "Dedizierte Cloud-Umgebungen für Compliance und Leistung. Volle Kontrolle über Ihre Infrastruktur ohne störende Nachbarn."
+    },
+    "devops": {
+      "title": "DevOps as a Service",
+      "description": "Beschleunigen Sie die Bereitstellung mit unserem erfahrenen DevOps-Team. CI/CD-Pipelines, Infrastructure as Code und automatisierte Workflows — wir kümmern uns darum."
+    },
+    "datacenter": {
+      "title": "Rechenzentrumsdienste",
+      "description": "Colocation und Managed Hosting an 13 globalen Standorten. Latenzarme Konnektivität mit einer Verfügbarkeitsgarantie von 99,99 %."
+    },
+    "mlops": {
+      "title": "MLOps",
+      "description": "Durchgängige Machine-Learning-Operationen. Vom Modelltraining bis zur Produktionsbereitstellung — wir optimieren Ihre AI/ML-Pipeline."
+    }
+  },
+  "metrics": {
+    "heading": "Unsere Wirkung in Zahlen",
+    "vms": { "value": "10", "suffix": "K+", "label": "Monatlich aktive virtuelle Instanzen" },
+    "satisfaction": { "value": "99", "suffix": "%", "label": "Kundenzufriedenheitsrate" },
+    "users": { "value": "5", "suffix": "K+", "label": "Monatlich aktive Nutzer" }
+  },
+  "process": {
+    "heading": "Wie funktioniert Cloudzy.AI?",
+    "subtitle": "Eine optimierte 5-Schritte-Methodik, die Sie von der Idee zur Umsetzung bringt.",
+    "steps": [
+      { "number": "01", "title": "Bedarf definieren", "description": "Reichen Sie Ihre Anforderungen über unser Online-Formular ein. Erzählen Sie uns von Ihren Workloads, Ihrer Skalierung und Ihren Zielen." },
+      { "number": "02", "title": "Unsere Architekten treffen", "description": "Unser Solution-Architect-Team prüft Ihre Anforderungen und entwirft einen massgeschneiderten Infrastruktur-Blueprint." },
+      { "number": "03", "title": "Vertragsvereinbarung", "description": "Transparente Preisgestaltung ohne versteckte Gebühren. Wir finalisieren Konditionen, die für beide Seiten funktionieren." },
+      { "number": "04", "title": "Dediziertes Team", "description": "Ein spezialisiertes Team wird Ihrem Projekt zugewiesen — Ingenieure, Support und ein dedizierter Account Manager." },
+      { "number": "05", "title": "Umsetzung & Bereitstellung", "description": "Wir deployen, überwachen und optimieren Ihre Infrastruktur. Kontinuierliche Verbesserung ist fester Bestandteil unseres Prozesses." }
+    ]
+  },
+  "why_us": {
+    "heading": "Warum Cloudzy.AI wählen",
+    "subtitle": "Über 8 Jahre Cloud-Exzellenz auf drei Kontinenten.",
+    "items": [
+      { "title": "Über 8 Jahre Erfahrung", "description": "Praxiserprobte Infrastrukturlösungen, verfeinert über fast ein Jahrzehnt der Betreuung globaler Kunden." },
+      { "title": "Workflow-Automatisierung", "description": "Automatisierte Bereitstellung, Skalierung und Überwachung. Ihre Infrastruktur passt sich in Echtzeit an die Nachfrage an." },
+      { "title": "Intuitive Benutzeroberfläche", "description": "Ein übersichtliches Control Panel, das komplexes Cloud-Management mühelos macht." },
+      { "title": "Globale Infrastruktur", "description": "13 Rechenzentrumsstandorte auf 3 Kontinenten. Latenzarmer Zugriff, wo immer sich Ihre Nutzer befinden." }
+    ]
+  },
+  "faq": {
+    "heading": "Häufig gestellte Fragen",
+    "items": [
+      { "question": "Was ist Cloudzy.AI?", "answer": "Cloudzy.AI ist die Enterprise-Sparte der Cloudzy-Gruppe und bietet verwaltete Cloud-Infrastruktur, DevOps-Dienste und MLOps-Lösungen für Unternehmen jeder Grösse." },
+      { "question": "Welche Leistungen bieten Sie an?", "answer": "Wir bieten Public Cloud, Private Cloud, DevOps as a Service, Rechenzentrumsdienste und MLOps — alles gestützt auf unsere globale Infrastruktur an 13 Standorten." },
+      { "question": "Für wen ist Cloudzy.AI?", "answer": "Unsere Dienste richten sich an Unternehmen, Entwickler und IT-Fachleute, die zuverlässige, skalierbare und kosteneffiziente Cloud-Infrastruktur benötigen." },
+      { "question": "Wie fange ich an?", "answer": "Kontaktieren Sie uns einfach über unsere Kontaktseite oder klicken Sie auf 'Jetzt starten', um Ihre Anforderungen einzureichen. Unsere Solution Architects melden sich innerhalb von 24 Stunden bei Ihnen." },
+      { "question": "Wo befinden sich Ihre Rechenzentren?", "answer": "Wir betreiben 13 Standorte: Ogden, Dallas, Los Angeles, New York, Miami, Las Vegas (US), London (UK), Amsterdam (NL), Frankfurt (DE), Bern (CH), Dubai (AE), Singapur (SG) und Sydney (AU)." }
+    ]
+  },
+  "cta": {
+    "heading": "Bereit für eine erfolgreiche Partnerschaft?",
+    "subtitle": "Lassen Sie uns gemeinsam etwas Aussergewöhnliches aufbauen.",
+    "button": "Kontakt aufnehmen"
+  },
+  "contact": {
+    "page_title": "Kontakt aufnehmen",
+    "page_subtitle": "Wir freuen uns, von Ihnen zu hören. Nehmen Sie Kontakt auf und lassen Sie uns besprechen, wie wir helfen können.",
+    "company_name": "Cloudzy AI Information Technology L.L.C",
+    "register_label": "Registernummer",
+    "register_no": "2312897",
+    "address_label": "Adresse",
+    "address": "Office No. B20, Khaled Mohammed Building, Horalanz, Dubai, United Arab Emirates",
+    "phone_label": "Telefon",
+    "phone": "+971-58-191-0073",
+    "services_label": "Unsere Leistungen",
+    "services_list": "Public Cloud, Private Cloud, DevOps as a Service, Rechenzentrumsdienste, MLOps"
+  },
+  "footer": {
+    "description": "Cloudzy.AI ist die Enterprise-Cloud-Sparte der Cloudzy-Gruppe und liefert verwaltete Infrastrukturlösungen weltweit.",
+    "quick_links": "Schnellzugriff",
+    "copyright": "© 2025 Cloudzy.ai Alle Rechte vorbehalten.",
+    "powered_by": "Teil der Cloudzy-Gruppe"
+  }
+}

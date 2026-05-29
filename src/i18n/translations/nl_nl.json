@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Cloudzy.AI — Uw alles-in-één cloudplatform",
+    "description": "Cloudinfrastructuuroplossingen op enterprise-niveau. Public Cloud, Private Cloud, DevOps as a Service, datacenterdiensten en MLOps — alles onder één dak."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Uw alles-in-één cloudplatform",
+    "subtitle": "Richt u op de groei van uw bedrijf terwijl wij de technische complexiteit voor onze rekening nemen. Aanpasbare, kostenefficiënte cloudoplossingen met een naadloze ervaring.",
+    "cta_primary": "Aan de slag",
+    "cta_secondary": "Onze diensten"
+  },
+  "trusted_by": {
+    "heading": "Vertrouwd door marktleiders"
+  },
+  "services": {
+    "heading": "Ontdek de kracht van ons cloudplatform",
+    "subtitle": "Hoe Cloudzy.AI u helpt sneller te schalen, te implementeren en te innoveren.",
+    "public_cloud": {
+      "title": "Public Cloud",
+      "description": "Schaalbare virtuele infrastructuur op aanvraag. Implementeer workloads wereldwijd met betrouwbaarheid op enterprise-niveau en betaal alleen voor wat u gebruikt."
+    },
+    "private_cloud": {
+      "title": "Private Cloud",
+      "description": "Toegewijde cloudomgevingen gebouwd voor compliance en prestaties. Volledige controle over uw infrastructuur zonder storende buren."
+    },
+    "devops": {
+      "title": "DevOps as a Service",
+      "description": "Versnel de oplevering met ons deskundige DevOps-team. CI/CD-pipelines, infrastructure as code en geautomatiseerde workflows — wij regelen het."
+    },
+    "datacenter": {
+      "title": "Datacenterdiensten",
+      "description": "Colocatie en managed hosting op 13 wereldwijde locaties. Lage latentie met een uptime-garantie van 99,99%."
+    },
+    "mlops": {
+      "title": "MLOps",
+      "description": "End-to-end machine learning-operaties. Van modeltraining tot productie-implementatie — wij stroomlijnen uw AI/ML-pipeline."
+    }
+  },
+  "metrics": {
+    "heading": "Onze impact in cijfers",
+    "vms": { "value": "10", "suffix": "K+", "label": "Maandelijks actieve virtuele instanties" },
+    "satisfaction": { "value": "99", "suffix": "%", "label": "Klanttevredenheidspercentage" },
+    "users": { "value": "5", "suffix": "K+", "label": "Maandelijks actieve gebruikers" }
+  },
+  "process": {
+    "heading": "Hoe werkt Cloudzy.AI?",
+    "subtitle": "Een gestroomlijnde 5-stappenmethodiek om u van idee naar uitvoering te brengen.",
+    "steps": [
+      { "number": "01", "title": "Uw behoeften definiëren", "description": "Dien uw vereisten in via ons onlineformulier. Vertel ons over uw workloads, schaal en doelen." },
+      { "number": "02", "title": "Ontmoet onze architecten", "description": "Ons Solution Architect-team beoordeelt uw behoeften en ontwerpt een op maat gemaakte infrastructuurblauwdruk." },
+      { "number": "03", "title": "Contractovereenkomst", "description": "Transparante prijsstelling zonder verborgen kosten. We finaliseren voorwaarden die voor beide partijen werken." },
+      { "number": "04", "title": "Toegewijd team", "description": "Een gespecialiseerd team wordt aan uw project toegewezen — engineers, support en een toegewijde accountmanager." },
+      { "number": "05", "title": "Uitvoering & oplevering", "description": "Wij implementeren, monitoren en optimaliseren uw infrastructuur. Continue verbetering is ingebouwd in ons proces." }
+    ]
+  },
+  "why_us": {
+    "heading": "Waarom kiezen voor Cloudzy.AI",
+    "subtitle": "Meer dan 8 jaar cloudexcellentie op drie continenten.",
+    "items": [
+      { "title": "Meer dan 8 jaar ervaring", "description": "Beproefde infrastructuuroplossingen, verfijnd gedurende bijna een decennium van dienstverlening aan wereldwijde klanten." },
+      { "title": "Workflowautomatisering", "description": "Geautomatiseerde provisioning, schaling en monitoring. Uw infrastructuur past zich realtime aan de vraag aan." },
+      { "title": "Intuïtieve interface", "description": "Een overzichtelijk configuratiescherm dat complex cloudbeheer moeiteloos maakt." },
+      { "title": "Wereldwijde infrastructuur", "description": "13 datacenterlocaties op 3 continenten. Toegang met lage latentie, waar uw gebruikers zich ook bevinden." }
+    ]
+  },
+  "faq": {
+    "heading": "Veelgestelde vragen",
+    "items": [
+      { "question": "Wat is Cloudzy.AI?", "answer": "Cloudzy.AI is de enterprise-divisie van de Cloudzy-groep en biedt beheerde cloudinfrastructuur, DevOps-diensten en MLOps-oplossingen aan bedrijven van elke omvang." },
+      { "question": "Welke diensten bieden jullie aan?", "answer": "Wij bieden Public Cloud, Private Cloud, DevOps as a Service, datacenterdiensten en MLOps — allemaal ondersteund door onze wereldwijde infrastructuur op 13 locaties." },
+      { "question": "Voor wie is Cloudzy.AI?", "answer": "Onze diensten zijn ontworpen voor bedrijven, ontwikkelaars en IT-professionals die betrouwbare, schaalbare en kostenefficiënte cloudinfrastructuur nodig hebben." },
+      { "question": "Hoe ga ik van start?", "answer": "Neem eenvoudig contact met ons op via onze contactpagina of klik op 'Aan de slag' om uw vereisten in te dienen. Onze solution architects nemen binnen 24 uur contact met u op." },
+      { "question": "Waar bevinden zich jullie datacenters?", "answer": "Wij zijn actief op 13 locaties: Ogden, Dallas, Los Angeles, New York, Miami, Las Vegas (VS), Londen (VK), Amsterdam (NL), Frankfurt (DE), Bern (CH), Dubai (AE), Singapore (SG) en Sydney (AU)." }
+    ]
+  },
+  "cta": {
+    "heading": "Klaar om een succesvol partnerschap aan te gaan?",
+    "subtitle": "Laten we samen iets buitengewoons bouwen.",
+    "button": "Neem contact op"
+  },
+  "contact": {
+    "page_title": "Neem contact op",
+    "page_subtitle": "We horen graag van u. Neem contact op en laten we bespreken hoe we u kunnen helpen.",
+    "company_name": "Cloudzy AI Information Technology L.L.C",
+    "register_label": "Registratienummer",
+    "register_no": "2312897",
+    "address_label": "Adres",
+    "address": "Office No. B20, Khaled Mohammed Building, Horalanz, Dubai, United Arab Emirates",
+    "phone_label": "Telefoon",
+    "phone": "+971-58-191-0073",
+    "services_label": "Onze diensten",
+    "services_list": "Public Cloud, Private Cloud, DevOps as a Service, Datacenterdiensten, MLOps"
+  },
+  "footer": {
+    "description": "Cloudzy.AI is de enterprise-clouddivisie van de Cloudzy-groep en levert beheerde infrastructuuroplossingen wereldwijd.",
+    "quick_links": "Snelkoppelingen",
+    "copyright": "© 2025 Cloudzy.ai Alle rechten voorbehouden.",
+    "powered_by": "Onderdeel van de Cloudzy-groep"
+  }
+}
