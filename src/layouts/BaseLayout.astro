@@ -47,19 +47,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       function initAnimations() {
         ScrollTrigger.getAll().forEach(st => st.kill());
-        gsap.globalTimeline.clear();
 
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReduced) return;
 
-        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((el, i) => {
+        gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((el) => {
           gsap.from(el, {
             y: 60,
             opacity: 0,
             duration: 1,
-            delay: i * 0.08,
             ease: 'power4.out',
-            filter: 'blur(8px)',
             scrollTrigger: { trigger: el, start: 'top 88%', once: true },
           });
         });
@@ -72,7 +69,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             duration: 0.9,
             stagger: 0.1,
             ease: 'power4.out',
-            filter: 'blur(6px)',
             scrollTrigger: { trigger: container, start: 'top 82%', once: true },
           });
         });
@@ -83,7 +79,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             opacity: 0,
             duration: 1,
             ease: 'back.out(1.4)',
-            filter: 'blur(10px)',
             scrollTrigger: { trigger: el, start: 'top 85%', once: true },
           });
         });
