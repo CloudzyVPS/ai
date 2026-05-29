@@ -34,7 +34,7 @@ const metrics = [
             <div class="hidden md:block absolute top-1/2 start-0 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-border to-transparent"></div>
           )}
           <div class="text-7xl sm:text-8xl md:text-[7rem] lg:text-[8.5rem] font-extrabold tracking-tighter leading-none mb-4">
-            <span class="text-shimmer">{value}{suffix}</span>
+            <span class="text-shimmer metric-counter" data-target={value} data-suffix={suffix}>0{suffix}</span>
           </div>
           <p class="text-slate-400 text-lg sm:text-xl font-medium">{label}</p>
         </div>
@@ -42,3 +42,44 @@ const metrics = [
     </div>
   </div>
 </section>
+
+<script>
+  function animateCounter(el: HTMLElement) {
+    const target = parseFloat(el.dataset.target ?? '0');
+    const suffix = el.dataset.suffix ?? '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function easeOutExpo(t: number): number {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function tick(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutExpo(progress);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  document.querySelectorAll<HTMLElement>('.metric-counter').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
