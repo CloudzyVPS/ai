@@ -21,20 +21,20 @@ const metrics = [
   </div>
 
   <div class="mx-auto max-w-7xl px-6 relative z-10">
-    <div class="text-center mb-12" data-animate="fade-up">
+    <div class="text-center mb-12">
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
         <span class="text-gradient">{t(locale, 'metrics.heading')}</span>
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" data-animate="fade-up-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
       {metrics.map(({ value, suffix, label }, i) => (
         <div class="text-center p-8 sm:p-12 relative">
           {i > 0 && (
             <div class="hidden md:block absolute top-1/2 start-0 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-border to-transparent"></div>
           )}
           <div class="text-7xl sm:text-8xl md:text-[7rem] lg:text-[8.5rem] font-extrabold tracking-tighter leading-none mb-4">
-            <span class="text-shimmer" data-animate="counter" data-value={value} data-suffix={suffix}>0{suffix}</span>
+            <span class="text-shimmer">{value}{suffix}</span>
           </div>
           <p class="text-slate-400 text-lg sm:text-xl font-medium">{label}</p>
         </div>

@@ -26,12 +26,12 @@ const gradients = [
 
 <section class="py-16 sm:py-24 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute top-0 end-0 w-[500px] h-[500px] bg-glow-purple/10 rounded-full blur-[180px] animate-float-slow"></div>
-    <div class="absolute bottom-0 start-0 w-[500px] h-[500px] bg-glow-cyan/10 rounded-full blur-[180px] animate-float-slow" style="animation-delay: -6s;"></div>
+    <div class="absolute top-0 end-0 w-[500px] h-[500px] bg-glow-purple/10 rounded-full blur-[180px]"></div>
+    <div class="absolute bottom-0 start-0 w-[500px] h-[500px] bg-glow-cyan/10 rounded-full blur-[180px]"></div>
   </div>
 
   <div class="mx-auto max-w-7xl px-6 relative z-10">
-    <div class="text-center mb-12" data-animate="fade-up">
+    <div class="text-center mb-12">
       <p class="text-sm font-semibold text-accent-400 uppercase tracking-[0.2em] mb-4">Why Us</p>
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
         <span class="text-gradient">{t(locale, 'why_us.heading')}</span>
@@ -41,7 +41,7 @@ const gradients = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" data-animate="fade-up-stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {items.map((item, i) => (
         <div class="group glass glow-card rounded-3xl p-8 sm:p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-500/5">
           <div class="flex items-start gap-6">

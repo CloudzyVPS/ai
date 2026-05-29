@@ -20,42 +20,23 @@ const partners = [
 ];
 ---
 
-<section class="py-12 sm:py-16 relative overflow-hidden" data-animate="fade-up">
+<section class="py-12 sm:py-16 relative overflow-hidden">
   <div class="mx-auto max-w-7xl px-6 mb-12">
     <p class="text-center text-sm text-slate-500 uppercase tracking-[0.2em] font-semibold">
       {t(locale, 'trusted_by.heading')}
     </p>
   </div>
 
-  <div class="relative">
-    <div class="absolute inset-y-0 start-0 w-40 bg-gradient-to-e from-dark-950 to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute inset-y-0 end-0 w-40 bg-gradient-to-s from-dark-950 to-transparent z-10 pointer-events-none"></div>
-
-    <div class="flex overflow-hidden group" aria-hidden="true">
-      <div class="flex shrink-0 items-center gap-20 animate-marquee group-hover:[animation-play-state:paused]">
-        {[...partners, ...partners].map(({ name, file }) => (
-          <div class="flex items-center justify-center px-6 py-3">
-            <img
-              src={`${base}/images/logos/trusted/${file}`}
-              alt={name}
-              class="h-8 sm:h-10 w-auto partner-logo max-w-[160px] object-contain"
-              loading="lazy"
-            />
-          </div>
-        ))}
+  <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 px-6">
+    {partners.map(({ name, file }) => (
+      <div class="flex items-center justify-center py-2">
+        <img
+          src={`${base}/images/logos/trusted/${file}`}
+          alt={name}
+          class="h-8 sm:h-10 w-auto partner-logo max-w-[140px] object-contain"
+          loading="lazy"
+        />
       </div>
-      <div class="flex shrink-0 items-center gap-20 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
-        {[...partners, ...partners].map(({ name, file }) => (
-          <div class="flex items-center justify-center px-6 py-3">
-            <img
-              src={`${base}/images/logos/trusted/${file}`}
-              alt={name}
-              class="h-8 sm:h-10 w-auto partner-logo max-w-[160px] object-contain"
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    ))}
   </div>
 </section>
