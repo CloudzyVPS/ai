@@ -597,137 +597,138 @@ html[data-design='cloudzy'] .bg-dark-950\/30 { background-color: rgba(7, 32, 50,
 html[data-design='cloudzy'] .rounded-\[2rem\] .text-dark-950 { color: #072032 !important; }
 
 /* ============================================================
-   7 · MICROSOFT — Fluent design (neutral grey, Fluent blue, Segoe UI)
+   7 · WORKSPACE — productivity-suite inspired (neutral grey, flat tiles)
    ------------------------------------------------------------
-   Microsoft Fluent / Office / Azure look: neutral-grey surfaces,
-   themePrimary blue #0078d4, Segoe UI (a system font on most devices
-   — lean, no webfont), restrained corners, soft elevation shadows,
-   and the iconic four-square brand colours on the process tiles.
+   A clean enterprise-productivity look (inspired by mainstream office
+   suites, not any specific brand): neutral-grey surfaces, a calm
+   corporate blue, a neutral system/Inter type stack, restrained corners,
+   soft layered elevation, and a friendly multi-colour set on the process
+   tiles. Whitelabel — no proprietary names, fonts, or exact brand hexes.
    ============================================================ */
-html[data-design='microsoft'] {
-  /* Fluent neutral light surfaces */
-  --color-dark-950: #f3f2f1; /* neutralLighter — page bg */
-  --color-dark-900: #faf9f8; /* neutralLighterAlt — alt surface */
-  --color-dark-800: #ffffff; /* white — cards */
-  --color-dark-700: #e1dfdd; /* neutralLight — borders */
-  --color-dark-600: #c8c6c4; /* scrollbar */
-  --color-dark-500: #a19f9d; /* scrollbar hover */
+html[data-design='workspace'] {
+  /* neutral light surfaces */
+  --color-dark-950: #f3f3f1; /* page bg */
+  --color-dark-900: #fafafa; /* alt surface */
+  --color-dark-800: #ffffff; /* cards */
+  --color-dark-700: #e2e0de; /* borders */
+  --color-dark-600: #c9c7c4; /* scrollbar */
+  --color-dark-500: #a3a09d; /* scrollbar hover */
 
-  /* accent → Fluent blue */
-  --color-accent-400: #2b88d8;
-  --color-accent-500: #0078d4; /* themePrimary */
-  --color-accent-600: #106ebe; /* themeDark */
+  /* accent → calm corporate blue (shifted off any exact brand token) */
+  --color-accent-400: #3f8fd9;
+  --color-accent-500: #1a6dc7;
+  --color-accent-600: #155aa6;
 
-  /* glows kept blue/cyan (Microsoft cyan square) */
-  --color-glow-purple: #0078d4;
-  --color-glow-cyan: #00a4ef;
-  --color-glow-blue: #0078d4;
+  /* glows kept in the blue family */
+  --color-glow-purple: #1a6dc7;
+  --color-glow-cyan: #2ba0dd;
+  --color-glow-blue: #1a6dc7;
 
   /* glass → white cards, neutral hairline */
   --color-surface: #ffffff;
-  --color-surface-hover: #faf9f8;
-  --color-border: #e1dfdd;
-  --color-border-hover: #c8c6c4;
+  --color-surface-hover: #fafafa;
+  --color-border: #e2e0de;
+  --color-border-hover: #c9c7c4;
 
-  /* text → Fluent neutral ramp on light */
-  --color-slate-200: #201f1e; /* neutralPrimary — headings */
-  --color-slate-300: #323130; /* neutralDark */
-  --color-slate-400: #605e5c; /* neutralSecondary — body */
-  --color-slate-500: #797775; /* neutralTertiary */
-  --color-slate-600: #a19f9d;
+  /* text → neutral ramp on light */
+  --color-slate-200: #1f1e1d; /* headings */
+  --color-slate-300: #323130;
+  --color-slate-400: #5f5d5b; /* body */
+  --color-slate-500: #797775;
+  --color-slate-600: #a3a09d;
 
-  /* Fluent uses small, restrained corners */
+  /* restrained corners */
   --radius-sm: 2px; --radius-md: 2px; --radius-lg: 4px;
   --radius-xl: 4px; --radius-2xl: 4px; --radius-3xl: 6px; --radius-4xl: 8px;
 }
-html[data-design='microsoft']:not([dir='rtl']) {
-  --font-sans: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+html[data-design='workspace']:not([dir='rtl']) {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
-html[data-design='microsoft'] { color: #201f1e; }
-html[data-design='microsoft']:not([dir='rtl']) h1,
-html[data-design='microsoft']:not([dir='rtl']) h2,
-html[data-design='microsoft']:not([dir='rtl']) h3 {
-  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
-  font-weight: 600; /* Fluent semibold */
+html[data-design='workspace'] { color: #1f1e1d; }
+html[data-design='workspace']:not([dir='rtl']) h1,
+html[data-design='workspace']:not([dir='rtl']) h2,
+html[data-design='workspace']:not([dir='rtl']) h3 {
+  font-family: 'Inter Variable', system-ui, sans-serif;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 /* white display utilities → neutral ink on light */
-html[data-design='microsoft'] .text-white { color: #201f1e !important; }
+html[data-design='workspace'] .text-white { color: #1f1e1d !important; }
 
 /* logos/partners read as grey on light */
-html[data-design='microsoft'] .partner-logo { filter: brightness(0) invert(0.45); }
-html[data-design='microsoft'] .partner-logo:hover { filter: brightness(0) invert(0.3); }
+html[data-design='workspace'] .partner-logo { filter: brightness(0) invert(0.45); }
+html[data-design='workspace'] .partner-logo:hover { filter: brightness(0) invert(0.3); }
 
-/* clean Fluent canvas — no ambient orbs */
-html[data-design='microsoft'] .glow-breathe,
-html[data-design='microsoft'] .glow-breathe-2,
-html[data-design='microsoft'] .glow-breathe-3 { display: none; }
+/* clean canvas — no ambient orbs */
+html[data-design='workspace'] .glow-breathe,
+html[data-design='workspace'] .glow-breathe-2,
+html[data-design='workspace'] .glow-breathe-3 { display: none; }
 
 /* faint white-alpha fills → neutral tints */
-html[data-design='microsoft'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; }
-html[data-design='microsoft'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.06) !important; }
+html[data-design='workspace'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; }
+html[data-design='workspace'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.06) !important; }
 
 /* hero photo wash → near-white so neutral copy stays crisp */
-html[data-design='microsoft'] .bg-dark-950\/75 { background-color: rgba(243, 242, 241, 0.92) !important; }
+html[data-design='workspace'] .bg-dark-950\/75 { background-color: rgba(243, 243, 241, 0.92) !important; }
 
-/* display gradients → Fluent blue (was white→cyan, invisible on light) */
-html[data-design='microsoft'] .text-gradient,
-html[data-design='microsoft'] .text-shimmer {
-  background: linear-gradient(135deg, #201f1e 0%, #0078d4 100%);
+/* display gradients → corporate blue (was white→cyan, invisible on light) */
+html[data-design='workspace'] .text-gradient,
+html[data-design='workspace'] .text-shimmer {
+  background: linear-gradient(135deg, #1f1e1d 0%, #1a6dc7 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
-html[data-design='microsoft'] .text-gradient-vivid {
-  background: linear-gradient(135deg, #0078d4 0%, #004e8c 100%);
+html[data-design='workspace'] .text-gradient-vivid {
+  background: linear-gradient(135deg, #1a6dc7 0%, #103f73 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 
-/* glass → white cards, neutral hairline, Fluent depth shadow */
-html[data-design='microsoft'] .glass,
-html[data-design='microsoft'] .glass-heavy {
+/* glass → white cards, neutral hairline, soft depth shadow */
+html[data-design='workspace'] .glass,
+html[data-design='workspace'] .glass-heavy {
   background: #ffffff !important;
   backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
-  border: 1px solid #e1dfdd !important;
+  border: 1px solid #e2e0de !important;
   box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.10), 0 0.3px 0.9px rgba(0, 0, 0, 0.07);
 }
-html[data-design='microsoft'] .glass:hover { background: #faf9f8 !important; border-color: #c8c6c4 !important; }
+html[data-design='workspace'] .glass:hover { background: #fafafa !important; border-color: #c9c7c4 !important; }
 
-/* cards → Fluent elevation, deeper lift on hover */
-html[data-design='microsoft'] .glow-card {
-  border: 1px solid #e1dfdd !important;
+/* cards → soft elevation, deeper lift on hover */
+html[data-design='workspace'] .glow-card {
+  border: 1px solid #e2e0de !important;
   box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.10), 0 0.3px 0.9px rgba(0, 0, 0, 0.07) !important;
   transition: box-shadow 0.2s ease, transform 0.2s ease !important;
 }
-html[data-design='microsoft'] .glow-card::before { display: none !important; }
-html[data-design='microsoft'] .glow-card:hover {
+html[data-design='workspace'] .glow-card::before { display: none !important; }
+html[data-design='workspace'] .glow-card:hover {
   box-shadow: 0 6.4px 14.4px rgba(0, 0, 0, 0.13), 0 1.2px 3.6px rgba(0, 0, 0, 0.10) !important;
 }
 
-/* primary buttons → solid Fluent blue, flat */
-html[data-design='microsoft'] .bg-gradient-to-r {
+/* primary buttons → solid corporate blue, flat */
+html[data-design='workspace'] .bg-gradient-to-r {
   background-image: none !important;
-  background-color: #0078d4 !important;
+  background-color: #1a6dc7 !important;
   color: #ffffff !important;
   box-shadow: none;
 }
-html[data-design='microsoft'] .bg-gradient-to-r:hover { background-color: #106ebe !important; }
+html[data-design='workspace'] .bg-gradient-to-r:hover { background-color: #155aa6 !important; }
 
-/* the iconic four Microsoft squares on the process step tiles
-   (.from-accent-500 circles only exist in the Process section) */
-html[data-design='microsoft'] .reveal-stagger > div:nth-child(1) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #f25022 !important; } /* red */
-html[data-design='microsoft'] .reveal-stagger > div:nth-child(2) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #7fba00 !important; } /* green */
-html[data-design='microsoft'] .reveal-stagger > div:nth-child(3) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #00a4ef !important; } /* blue */
-html[data-design='microsoft'] .reveal-stagger > div:nth-child(4) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #ffb900 !important; color: #201f1e !important; } /* yellow — dark number */
-html[data-design='microsoft'] .reveal-stagger > div:nth-child(5) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #0078d4 !important; } /* blue */
+/* friendly multi-colour set on the process step tiles
+   (inspired, generic palette — NOT exact brand-logo hexes) */
+html[data-design='workspace'] .reveal-stagger > div:nth-child(1) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #e35a45 !important; } /* coral */
+html[data-design='workspace'] .reveal-stagger > div:nth-child(2) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #5aa72f !important; } /* leaf */
+html[data-design='workspace'] .reveal-stagger > div:nth-child(3) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #27a6dd !important; } /* sky */
+html[data-design='workspace'] .reveal-stagger > div:nth-child(4) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #efa521 !important; color: #1f1e1d !important; } /* amber — dark number */
+html[data-design='workspace'] .reveal-stagger > div:nth-child(5) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #1a6dc7 !important; } /* blue */
 
-/* CTA band → solid Fluent blue with white copy */
-html[data-design='microsoft'] .bg-gradient-to-br.from-accent-600 {
-  background-image: none !important; background-color: #0078d4 !important; opacity: 1 !important;
+/* CTA band → solid corporate blue with white copy */
+html[data-design='workspace'] .bg-gradient-to-br.from-accent-600 {
+  background-image: none !important; background-color: #1a6dc7 !important; opacity: 1 !important;
 }
-html[data-design='microsoft'] .bg-dark-950\/30 { background-color: rgba(0, 0, 0, 0.12) !important; }
-html[data-design='microsoft'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
-html[data-design='microsoft'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.85) !important; }
-html[data-design='microsoft'] .rounded-\[2rem\] .text-dark-950 { color: #0078d4 !important; }
+html[data-design='workspace'] .bg-dark-950\/30 { background-color: rgba(0, 0, 0, 0.12) !important; }
+html[data-design='workspace'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
+html[data-design='workspace'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.85) !important; }
+html[data-design='workspace'] .rounded-\[2rem\] .text-dark-950 { color: #1a6dc7 !important; }
 
 /* ============================================================
    8 · DUBAI — Gulf luxury (midnight teal, desert gold, turquoise)
@@ -824,3 +825,235 @@ html[data-design='dubai'] .bg-gradient-to-br.from-accent-600 {
   opacity: 1 !important;
 }
 html[data-design='dubai'] .rounded-\[2rem\] { border: 1px solid rgba(212, 175, 55, 0.35); }
+/* ============================================================
+   9 · CONCOURS — grand-tourer luxury (racing green, lime, platinum)
+   ------------------------------------------------------------
+   British grand-tourer aesthetic (inspired by classic GT marques,
+   whitelabel — no brand name, logo, or proprietary font): deep racing
+   green, a signature acid-lime pop, platinum/silver and warm ivory text,
+   with an elegant Cormorant Garamond display face over a clean sans.
+   ============================================================ */
+html[data-design='concours'] {
+  /* deep British-racing-green surfaces */
+  --color-dark-950: #04231d; /* page bg */
+  --color-dark-900: #082c25;
+  --color-dark-800: #0b362d;
+  --color-dark-700: #134034;
+  --color-dark-600: #1c5446;
+  --color-dark-500: #2c6f5d;
+
+  /* accent → refined emerald (legible for small accent text on green) */
+  --color-accent-400: #41c79a;
+  --color-accent-500: #2a9d75;
+  --color-accent-600: #1f7a5c;
+
+  /* glows → emerald + signature lime */
+  --color-glow-purple: #1f7a5c;
+  --color-glow-cyan: #c4d82e;  /* acid lime */
+  --color-glow-blue: #2a9d75;
+
+  /* glass → green panels, platinum hairline */
+  --color-surface: rgba(196, 216, 46, 0.05);
+  --color-surface-hover: rgba(196, 216, 46, 0.09);
+  --color-border: rgba(210, 220, 200, 0.16);
+  --color-border-hover: rgba(196, 216, 46, 0.4);
+
+  /* text → warm ivory / sage on green */
+  --color-slate-200: #f2f1e8; /* ivory */
+  --color-slate-300: #dfe2d4;
+  --color-slate-400: #aeb6a6; /* muted body */
+  --color-slate-500: #8a9384;
+  --color-slate-600: #6b7466;
+
+  /* graceful curves */
+  --radius-2xl: 8px; --radius-3xl: 12px; --radius-4xl: 16px;
+}
+html[data-design='concours']:not([dir='rtl']) {
+  --font-sans: 'Jost', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Cormorant Garamond for headings + display (Jost for prose) */
+html[data-design='concours']:not([dir='rtl']) h1,
+html[data-design='concours']:not([dir='rtl']) h2,
+html[data-design='concours']:not([dir='rtl']) h3,
+html[data-design='concours']:not([dir='rtl']) .text-gradient,
+html[data-design='concours']:not([dir='rtl']) .text-gradient-vivid,
+html[data-design='concours']:not([dir='rtl']) .text-shimmer {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+/* display gradients → ivory→lime shimmer, emerald→lime vivid */
+html[data-design='concours'] .text-gradient,
+html[data-design='concours'] .text-shimmer {
+  background: linear-gradient(135deg, #f2f1e8 0%, #c4d82e 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-design='concours'] .text-gradient-vivid {
+  background: linear-gradient(135deg, #41c79a 0%, #c4d82e 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* platinum/lime hairline frame on cards, deep shadow */
+html[data-design='concours'] .glow-card::before {
+  background: linear-gradient(135deg, #c4d82e, transparent 45%, transparent 55%, #d2dcc8);
+  opacity: 0.45;
+}
+html[data-design='concours'] .glow-card { box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.9); }
+
+/* signature: primary buttons → acid-lime block with dark racing-green ink */
+html[data-design='concours'] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: #c4d82e !important;
+  color: #04231d !important;
+  box-shadow: 0 8px 22px -10px rgba(196, 216, 46, 0.6);
+}
+html[data-design='concours'] .bg-gradient-to-r:hover { background-color: #d4e84a !important; }
+
+/* process step tile → lime with dark ink number */
+html[data-design='concours'] .bg-gradient-to-br.from-accent-500 {
+  background-image: none !important;
+  background-color: #c4d82e !important;
+  color: #04231d !important;
+}
+
+/* recolour hero glow orbs → emerald + lime */
+html[data-design='concours'] .bg-glow-purple\/15,
+html[data-design='concours'] .bg-glow-purple\/10 { background-color: rgba(42, 157, 117, 0.16) !important; }
+html[data-design='concours'] .bg-glow-cyan\/10 { background-color: rgba(196, 216, 46, 0.12) !important; }
+html[data-design='concours'] .bg-glow-blue\/10 { background-color: rgba(42, 157, 117, 0.1) !important; }
+
+/* CTA: deep green panel with a lime ring + dark button text */
+html[data-design='concours'] .bg-gradient-to-br.from-accent-600 {
+  background-image: linear-gradient(135deg, #0b362d, #04231d) !important;
+  opacity: 1 !important;
+}
+html[data-design='concours'] .rounded-\[2rem\] { border: 1px solid rgba(196, 216, 46, 0.35); }
+html[data-design='concours'] .rounded-\[2rem\] .text-dark-950 { color: #04231d !important; }
+
+/* ============================================================
+   10 · MINIMAL — monochrome, flat, hairline (maximum restraint)
+   ------------------------------------------------------------
+   Swiss-minimal: white canvas, near-black ink, a single monochrome
+   accent, no gradients, no shadows, hairline borders. Inter type stack.
+   ============================================================ */
+html[data-design='minimal'] {
+  /* white / off-white surfaces */
+  --color-dark-950: #ffffff; /* page bg */
+  --color-dark-900: #fafafa;
+  --color-dark-800: #ffffff; /* cards */
+  --color-dark-700: #e5e5e5; /* borders */
+  --color-dark-600: #d4d4d4; /* scrollbar */
+  --color-dark-500: #a3a3a3; /* scrollbar hover */
+
+  /* accent → monochrome near-black */
+  --color-accent-400: #333333;
+  --color-accent-500: #111111;
+  --color-accent-600: #000000;
+
+  /* glows → ink (any decorative gradient collapses to mono) */
+  --color-glow-purple: #111111;
+  --color-glow-cyan: #111111;
+  --color-glow-blue: #111111;
+
+  /* glass → white cards, light hairline */
+  --color-surface: #ffffff;
+  --color-surface-hover: #fafafa;
+  --color-border: #e5e5e5;
+  --color-border-hover: #d4d4d4;
+
+  /* text → black / grey ramp on white */
+  --color-slate-200: #111111; /* headings */
+  --color-slate-300: #1f1f1f;
+  --color-slate-400: #555555; /* body */
+  --color-slate-500: #737373;
+  --color-slate-600: #a3a3a3;
+
+  /* crisp, nearly square */
+  --radius-sm: 0; --radius-md: 2px; --radius-lg: 2px;
+  --radius-xl: 2px; --radius-2xl: 2px; --radius-3xl: 3px; --radius-4xl: 4px;
+}
+html[data-design='minimal']:not([dir='rtl']) {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
+}
+html[data-design='minimal'] { color: #111111; }
+html[data-design='minimal']:not([dir='rtl']) h1,
+html[data-design='minimal']:not([dir='rtl']) h2,
+html[data-design='minimal']:not([dir='rtl']) h3 {
+  font-family: 'Inter Variable', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* white display utilities → ink on white */
+html[data-design='minimal'] .text-white { color: #111111 !important; }
+
+/* logos/partners → mono grey */
+html[data-design='minimal'] .partner-logo { filter: brightness(0) invert(0.35); }
+html[data-design='minimal'] .partner-logo:hover { filter: brightness(0) invert(0.15); }
+
+/* strip all ambient decoration */
+html[data-design='minimal'] .glow-breathe,
+html[data-design='minimal'] .glow-breathe-2,
+html[data-design='minimal'] .glow-breathe-3 { display: none; }
+
+/* faint white-alpha fills → light grey */
+html[data-design='minimal'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; }
+html[data-design='minimal'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.05) !important; }
+
+/* hero photo wash → near-white */
+html[data-design='minimal'] .bg-dark-950\/75 { background-color: rgba(255, 255, 255, 0.94) !important; }
+
+/* display text → flat ink, no gradient */
+html[data-design='minimal'] .text-gradient,
+html[data-design='minimal'] .text-gradient-vivid,
+html[data-design='minimal'] .text-shimmer {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: #111111;
+}
+
+/* glass → white, hairline, NO shadow */
+html[data-design='minimal'] .glass,
+html[data-design='minimal'] .glass-heavy {
+  background: #ffffff !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  border: 1px solid #e5e5e5 !important;
+  box-shadow: none !important;
+}
+html[data-design='minimal'] .glass:hover { background: #ffffff !important; border-color: #111111 !important; }
+
+/* cards → hairline, flat; border darkens on hover (no shadow, no lift) */
+html[data-design='minimal'] .glow-card {
+  border: 1px solid #e5e5e5 !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease !important;
+}
+html[data-design='minimal'] .glow-card::before { display: none !important; }
+html[data-design='minimal'] .glow-card:hover { border-color: #111111 !important; }
+
+/* primary buttons → solid black, white text, flat */
+html[data-design='minimal'] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+html[data-design='minimal'] .bg-gradient-to-r:hover { background-color: #000000 !important; }
+
+/* process step tile → solid black, white number */
+html[data-design='minimal'] .bg-gradient-to-br.from-accent-500 {
+  background-image: none !important;
+  background-color: #111111 !important;
+}
+
+/* CTA band → solid near-black with white copy */
+html[data-design='minimal'] .bg-gradient-to-br.from-accent-600 {
+  background-image: none !important; background-color: #111111 !important; opacity: 1 !important;
+}
+html[data-design='minimal'] .bg-dark-950\/30 { background-color: transparent !important; }
+html[data-design='minimal'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
+html[data-design='minimal'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.82) !important; }
+html[data-design='minimal'] .rounded-\[2rem\] .text-dark-950 { color: #111111 !important; }
+
