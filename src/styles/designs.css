@@ -18,6 +18,7 @@
      synthwave  → Synthwave  · neon terminal / retro-futurist
      brutalist  → Concrete   · neo-brutalism, light, hard offset shadows
      editorial  → Atelier    · luxury editorial, warm dark, serif
+     bauhaus    → Bauhaus    · primary-colour geometry, off-white, square + circle
 
    To remove the preview entirely:
      1. delete this file
@@ -323,3 +324,144 @@ html[data-design='editorial'] .bg-gradient-to-br.from-accent-600 {
   background-image: linear-gradient(135deg, var(--color-dark-800), var(--color-dark-950)) !important;
   opacity: 1 !important;
 }
+
+/* ============================================================
+   5 · BAUHAUS — primary-colour geometry, off-white, square + circle
+   ============================================================ */
+html[data-design='bauhaus'] {
+  /* off-white canvas, black structure */
+  --color-dark-950: #f4f1e8; /* page bg — warm off-white */
+  --color-dark-900: #eceadd;
+  --color-dark-800: #ffffff;
+  --color-dark-700: #141414;
+  --color-dark-600: #141414; /* scrollbar */
+  --color-dark-500: #2b2b2b; /* scrollbar hover */
+
+  /* accent → Bauhaus red */
+  --color-accent-400: #f0564a;
+  --color-accent-500: #e63027;
+  --color-accent-600: #c11f1a;
+
+  /* glows → primary triad: blue / yellow / blue */
+  --color-glow-purple: #1e5bb8; /* Bauhaus blue */
+  --color-glow-cyan: #ffd400;   /* Bauhaus yellow */
+  --color-glow-blue: #1e5bb8;
+
+  /* structure: black borders, white surfaces */
+  --color-surface: #ffffff;
+  --color-surface-hover: #ffffff;
+  --color-border: #141414;
+  --color-border-hover: #e63027;
+
+  /* slate text → near-black on off-white */
+  --color-slate-200: #141414;
+  --color-slate-300: #1f1f1f;
+  --color-slate-400: #3a3a3a;
+  --color-slate-500: #4a4a4a;
+  --color-slate-600: #5a5a5a;
+
+  /* crisp rectangles — circles (rounded-full) deliberately kept */
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 2px;
+  --radius-xl: 2px; --radius-2xl: 3px; --radius-3xl: 4px; --radius-4xl: 6px;
+}
+html[data-design='bauhaus']:not([dir='rtl']) {
+  --font-sans: 'Poppins', 'Inter Variable', system-ui, sans-serif;
+}
+html[data-design='bauhaus'] { color: #141414; }
+
+/* white / dark display utilities → black ink on off-white */
+html[data-design='bauhaus'] .text-white,
+html[data-design='bauhaus'] .text-dark-950 { color: #141414 !important; }
+html[data-design='bauhaus'] .text-white\/80 { color: rgba(20, 20, 20, 0.78) !important; }
+
+/* bold geometric headings */
+html[data-design='bauhaus'] h1,
+html[data-design='bauhaus'] h2,
+html[data-design='bauhaus'] h3 {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* logos & partner marks are built for a dark canvas → black silhouettes */
+html[data-design='bauhaus'] header img[src$='cloudzy-ai-icon.png'],
+html[data-design='bauhaus'] footer img[src$='cloudzy-ai-icon.png'] { filter: brightness(0); }
+html[data-design='bauhaus'] .partner-logo { filter: brightness(0); }
+
+/* clean flat canvas — no floating glow orbs, no texture */
+html[data-design='bauhaus'] .glow-breathe,
+html[data-design='bauhaus'] .glow-breathe-2,
+html[data-design='bauhaus'] .glow-breathe-3 { display: none; }
+
+/* faint white-alpha fills → light grey so they read on off-white */
+html[data-design='bauhaus'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.05) !important; }
+html[data-design='bauhaus'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.08) !important; }
+
+/* solid display text — primary colours, no gradient */
+html[data-design='bauhaus'] .text-gradient,
+html[data-design='bauhaus'] .text-shimmer {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: #141414;
+}
+html[data-design='bauhaus'] .text-gradient-vivid {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--color-accent-500); /* red */
+}
+
+/* glass surfaces → opaque white blocks, thin black border, no blur */
+html[data-design='bauhaus'] .glass,
+html[data-design='bauhaus'] .glass-heavy {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 2px solid #141414 !important;
+}
+
+/* cards: thin black frame, flat (no offset shadow); hover → red frame + lift */
+html[data-design='bauhaus'] .glow-card {
+  border: 2px solid #141414 !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, transform 0.15s ease !important;
+}
+html[data-design='bauhaus'] .glow-card::before { display: none !important; }
+html[data-design='bauhaus'] .glow-card:hover {
+  border-color: var(--color-accent-500) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* primary buttons: solid red block, white text, thin black frame, flat */
+html[data-design='bauhaus'] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: var(--color-accent-500) !important; /* red */
+  color: #ffffff !important;
+  border: 2px solid #141414 !important;
+  box-shadow: none !important;
+}
+html[data-design='bauhaus'] .bg-gradient-to-r:hover {
+  background-color: var(--color-accent-600) !important;
+}
+
+/* CTA button (.bg-white on the colour panel) → blue block, white text */
+html[data-design='bauhaus'] .bg-white {
+  background-color: var(--color-glow-blue) !important; /* blue */
+  color: #ffffff !important;
+  border: 2px solid #141414 !important;
+}
+
+/* process step block → solid Bauhaus blue, white number */
+html[data-design='bauhaus'] .bg-gradient-to-br.from-accent-500 {
+  background-image: none !important;
+  background-color: var(--color-glow-blue) !important; /* blue */
+  border: 2px solid #141414;
+  color: #ffffff !important;
+}
+
+/* CTA panel → bold yellow block, black frame; neutralise the dark scrim */
+html[data-design='bauhaus'] .bg-gradient-to-br.from-accent-600 {
+  background-image: none !important;
+  background-color: var(--color-glow-cyan) !important; /* yellow */
+  opacity: 1 !important;
+}
+html[data-design='bauhaus'] .bg-dark-950\/30 { background-color: transparent !important; }
+html[data-design='bauhaus'] .rounded-\[2rem\] { border: 2px solid #141414; }

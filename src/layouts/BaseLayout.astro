@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <script is:inline>
       (function () {
         var KEY = 'cloudzy-design';
-        var ALLOWED = ['main', 'synthwave', 'brutalist', 'editorial'];
+        var ALLOWED = ['main', 'synthwave', 'brutalist', 'editorial', 'bauhaus'];
         function pick() {
           try { var v = localStorage.getItem(KEY); return ALLOWED.indexOf(v) >= 0 ? v : 'main'; }
           catch (e) { return 'main'; }
@@ -96,7 +96,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
