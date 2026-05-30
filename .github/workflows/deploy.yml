@@ -5,6 +5,17 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Allow the deploy job to publish to GitHub Pages via OIDC.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two Pages deploys at once; let an in-flight one finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,9 +42,32 @@ jobs:
           SMTP_PORT: ${{ vars.SMTP_PORT }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
 
+      # Full standalone Node build (client + server) — kept for VPS deployment.
+      # The SMTP contact form (prerender=false) lives in dist/server and needs
+      # `node dist/server/entry.mjs` to run; GitHub Pages can't serve it.
       - name: Upload server artifact
         uses: actions/upload-artifact@v4
         with:
           name: cloudzy-server
           path: dist/
           retention-days: 7
+
+      # Prerendered static site only — this is what GitHub Pages serves.
+      # Repo is named "ai", so Pages publishes it at cloudzyvps.github.io/ai/,
+      # which matches the Astro `base: '/ai/'`. Note: the contact form API is
+      # NOT included here (it requires the Node server above).
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
