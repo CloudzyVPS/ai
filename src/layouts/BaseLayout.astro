@@ -1,7 +1,9 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import { localeMetadata, type Locale } from '@i18n/config';
+import DesignSwitcher from '@components/global/DesignSwitcher.astro';
 import '@styles/global.css';
+import '@styles/designs.css';
 
 interface Props {
   locale: Locale;
@@ -15,11 +17,67 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!doctype html>
-<html lang={meta.htmlLang} dir={meta.dir} class="dark">
+<html lang={meta.htmlLang} dir={meta.dir} class="dark" data-design="main">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    {/* TEMP design preview — apply the saved "school" before paint and wire the
+        floating switcher here so it survives Astro view transitions. */}
+    <script is:inline>
+      (function () {
+        var KEY = 'cloudzy-design';
+        var ALLOWED = ['main', 'synthwave', 'brutalist', 'editorial'];
+        function pick() {
+          try { var v = localStorage.getItem(KEY); return ALLOWED.indexOf(v) >= 0 ? v : 'main'; }
+          catch (e) { return 'main'; }
+        }
+        function apply(d) { document.documentElement.setAttribute('data-design', d); }
+        apply(pick());
+        if (window.__czDesign) return;
+        window.__czDesign = true;
+        function sync() {
+          var cur = pick();
+          var opts = document.querySelectorAll('[data-design-id]');
+          for (var i = 0; i < opts.length; i++) {
+            opts[i].setAttribute('aria-pressed', opts[i].getAttribute('data-design-id') === cur ? 'true' : 'false');
+          }
+        }
+        function setOpen(open) {
+          var w = document.getElementById('design-switcher');
+          if (!w) return;
+          w.setAttribute('data-open', open ? 'true' : 'false');
+          var fab = w.querySelector('[data-ds-toggle]');
+          if (fab) fab.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        document.addEventListener('click', function (e) {
+          var t = e.target;
+          if (!t || !t.closest) return;
+          var opt = t.closest('[data-design-id]');
+          if (opt) {
+            var d = opt.getAttribute('data-design-id');
+            if (ALLOWED.indexOf(d) >= 0) {
+              apply(d);
+              try { localStorage.setItem(KEY, d); } catch (err) {}
+              sync();
+            }
+            return;
+          }
+          if (t.closest('[data-ds-toggle]')) {
+            var w = document.getElementById('design-switcher');
+            setOpen(!(w && w.getAttribute('data-open') === 'true'));
+            return;
+          }
+          if (t.closest('[data-ds-close]')) { setOpen(false); }
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+        document.addEventListener('astro:after-swap', function () { apply(pick()); sync(); });
+        document.addEventListener('astro:page-load', sync);
+        if (document.readyState !== 'loading') sync();
+        else document.addEventListener('DOMContentLoaded', sync);
+      })();
+    </script>
     <title>{title ?? 'Cloudzy.AI'}</title>
     <meta name="description" content={description ?? ''} />
     <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
@@ -34,10 +92,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     ))}
     <link rel="alternate" hreflang="x-default" href={`${Astro.site}ai/en_us/`} />
 
+    {/* TEMP design preview — fonts for the alternate "schools" */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Playfair+Display:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <ClientRouter />
   </head>
   <body class="min-h-screen bg-dark-950 text-slate-200 font-sans antialiased overflow-x-hidden">
     <slot />
+    <DesignSwitcher />
 
     <script>
       function initReveal() {

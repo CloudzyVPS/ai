@@ -1,0 +1,207 @@
+---
+/*
+ * TEMPORARY design-preview switcher.
+ * Lets us eyeball alternate "design schools" without touching routing —
+ * it flips the [data-design] attribute on <html> and remembers the choice
+ * in localStorage ("cloudzy-design"). All styling lives in src/styles/designs.css;
+ * the click / persistence logic lives in BaseLayout.astro (so it survives
+ * Astro view transitions). Delete all three to remove the preview.
+ */
+const designs = [
+  { id: 'main',      name: 'Aurora',    school: 'Deep-space glass',  colors: ['#3b82f6', '#8b5cf6', '#06b6d4'] },
+  { id: 'synthwave', name: 'Synthwave', school: 'Neon terminal',     colors: ['#00e5ff', '#e83bd6', '#0a0518'] },
+  { id: 'brutalist', name: 'Concrete',  school: 'Neo-brutalism',     colors: ['#2347ff', '#ffe600', '#f1ead9'] },
+  { id: 'editorial', name: 'Atelier',   school: 'Luxury editorial',  colors: ['#d4af37', '#c0824f', '#14100b'] },
+];
+---
+
+<div id="design-switcher" data-open="false">
+  <button
+    type="button"
+    class="ds-fab"
+    data-ds-toggle
+    aria-label="Preview a design"
+    aria-expanded="false"
+    aria-controls="ds-panel"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="13.5" cy="6.5" r="0.6" fill="currentColor" />
+      <circle cx="17.5" cy="10.5" r="0.6" fill="currentColor" />
+      <circle cx="8.5" cy="7.5" r="0.6" fill="currentColor" />
+      <circle cx="6.5" cy="12.5" r="0.6" fill="currentColor" />
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 2C6.5 2 2 6 2 11c0 4.4 3.6 7 7 7 1.2 0 1.8-.9 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.6 1.7-1.6H13c3.3 0 6-2.4 6-5.6C19 4.9 15.9 2 12 2Z" />
+    </svg>
+    <span class="ds-fab-label">Design</span>
+  </button>
+
+  <div id="ds-panel" class="ds-panel" role="group" aria-label="Preview a design">
+    <div class="ds-head">
+      <div class="ds-title">
+        <strong>Design preview</strong>
+        <span>temporary · saved in this browser</span>
+      </div>
+      <button type="button" class="ds-close" data-ds-close aria-label="Close design preview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+
+    <ul class="ds-list">
+      {designs.map((d) => (
+        <li>
+          <button type="button" class="ds-opt" data-design-id={d.id} aria-pressed="false">
+            <span class="ds-sw" aria-hidden="true">
+              {d.colors.map((c) => <i style={`--c:${c}`}></i>)}
+            </span>
+            <span class="ds-meta">
+              <strong>{d.name}</strong>
+              <small>{d.school}</small>
+            </span>
+            <svg class="ds-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  #design-switcher {
+    position: fixed;
+    inset-block-end: 1.25rem;
+    inset-inline-end: 1.25rem;
+    z-index: 2147483000; /* above header & mobile menu */
+    font-family: 'Inter Variable', system-ui, -apple-system, sans-serif;
+    color: #e5e7eb;
+  }
+
+  /* ── Floating button ── */
+  .ds-fab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1e293b, #0b1120);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.4);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .ds-fab:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7); }
+  .ds-fab svg { width: 1.15rem; height: 1.15rem; color: #67e8f9; }
+  .ds-fab-label { white-space: nowrap; }
+
+  /* ── Panel ── */
+  .ds-panel {
+    position: absolute;
+    inset-block-end: calc(100% + 0.75rem);
+    inset-inline-end: 0;
+    width: min(19rem, calc(100vw - 2.5rem));
+    padding: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    background: rgba(11, 17, 32, 0.92);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+    transform-origin: bottom right;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  #design-switcher[data-open='true'] .ds-panel {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .ds-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-block-end: 0.75rem;
+  }
+  .ds-title { display: flex; flex-direction: column; line-height: 1.2; }
+  .ds-title strong { font-size: 0.9rem; color: #fff; }
+  .ds-title span { font-size: 0.7rem; color: #94a3b8; margin-block-start: 0.15rem; }
+  .ds-close {
+    flex: none;
+    display: inline-flex;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .ds-close:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+  .ds-close svg { width: 1rem; height: 1rem; }
+
+  .ds-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .ds-opt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.02);
+    color: inherit;
+    text-align: start;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .ds-opt:hover { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.18); }
+  .ds-opt[aria-pressed='true'] {
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+  }
+
+  .ds-sw { flex: none; display: inline-flex; }
+  .ds-sw i {
+    width: 0.85rem;
+    height: 1.35rem;
+    background: var(--c);
+    margin-inline-start: -0.32rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(11, 17, 32, 0.9);
+  }
+  .ds-sw i:first-child { margin-inline-start: 0; }
+
+  .ds-meta { flex: 1 1 auto; display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+  .ds-meta strong { font-size: 0.85rem; color: #f1f5f9; }
+  .ds-meta small { font-size: 0.7rem; color: #94a3b8; }
+
+  .ds-check {
+    flex: none;
+    width: 1.05rem;
+    height: 1.05rem;
+    color: #38bdf8;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .ds-opt[aria-pressed='true'] .ds-check { opacity: 1; transform: none; }
+
+  @media (max-width: 480px) {
+    .ds-fab-label { display: none; }
+    .ds-fab { padding: 0.7rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ds-fab, .ds-panel, .ds-check { transition: none; }
+  }
+</style>

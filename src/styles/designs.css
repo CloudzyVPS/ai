@@ -1,0 +1,325 @@
+/* ============================================================
+   CLOUDZY.AI — Alternate Design Schools  (TEMPORARY / PREVIEW)
+   ------------------------------------------------------------
+   Driven by the [data-design] attribute on <html>, toggled by the
+   floating <DesignSwitcher /> and saved in localStorage
+   (key "cloudzy-design"). No routing involved.
+
+   Tailwind v4 compiles utilities to var(--color-*) / var(--font-*)
+   / var(--radius-*), and global.css drives everything off
+   --color-dark-*, --color-accent-*, --color-glow-* plus the
+   .glass / .text-gradient / .glow-card helpers. Re-pointing those
+   variables (and a few helpers) under a scope selector restyles
+   every component WITHOUT touching any markup. Rules are unlayered
+   so they beat Tailwind's @layer utilities regardless of order.
+
+   Schools:
+     main       → Aurora     · deep-space glassmorphism (default — global.css)
+     synthwave  → Synthwave  · neon terminal / retro-futurist
+     brutalist  → Concrete   · neo-brutalism, light, hard offset shadows
+     editorial  → Atelier    · luxury editorial, warm dark, serif
+
+   To remove the preview entirely:
+     1. delete this file
+     2. remove the designs.css import, the alternate-font <link>, the
+        no-FOUC <script> and <DesignSwitcher /> from BaseLayout.astro
+     3. delete src/components/global/DesignSwitcher.astro
+   ============================================================ */
+
+/* ============================================================
+   2 · SYNTHWAVE — neon terminal, retro-futurist
+   ============================================================ */
+html[data-design='synthwave'] {
+  /* deep violet-black surfaces */
+  --color-dark-950: #0a0518;
+  --color-dark-900: #120a26;
+  --color-dark-800: #1b0f38;
+  --color-dark-700: #2a1a4d;
+  --color-dark-600: #3d2766;
+  --color-dark-500: #59399c;
+
+  /* accent → electric cyan */
+  --color-accent-400: #4df0ff;
+  --color-accent-500: #00d4ee;
+  --color-accent-600: #06b6d4;
+
+  /* glows → cyan / magenta / indigo */
+  --color-glow-purple: #e83bd6;
+  --color-glow-cyan: #00e5ff;
+  --color-glow-blue: #5b6bff;
+
+  /* glass tinted neon */
+  --color-surface: rgba(0, 229, 255, 0.05);
+  --color-surface-hover: rgba(0, 229, 255, 0.1);
+  --color-border: rgba(0, 229, 255, 0.2);
+  --color-border-hover: rgba(232, 59, 214, 0.45);
+
+  /* slate text → cool violet-white */
+  --color-slate-200: #ece2fb;
+  --color-slate-300: #cdb9ec;
+  --color-slate-400: #a98fd0;
+  --color-slate-500: #8a6fb5;
+  --color-slate-600: #6f57a0;
+
+  /* sharp corners */
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0;
+  --radius-xl: 0; --radius-2xl: 0; --radius-3xl: 0; --radius-4xl: 0;
+}
+html[data-design='synthwave']:not([dir='rtl']) {
+  --font-sans: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+html[data-design='synthwave'] { color: #ece2fb; }
+html[data-design='synthwave'] .rounded-full,
+html[data-design='synthwave'] .rounded-\[2rem\] { border-radius: 0; }
+
+/* faint grid behind everything */
+html[data-design='synthwave'] body {
+  background-image:
+    linear-gradient(rgba(110, 74, 163, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 74, 163, 0.09) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+/* neon glowing display text */
+html[data-design='synthwave'] .text-gradient-vivid,
+html[data-design='synthwave'] .text-shimmer,
+html[data-design='synthwave'] .text-gradient {
+  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.5));
+}
+html[data-design='synthwave'] h1,
+html[data-design='synthwave'] h2 {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
+}
+
+/* neon-bordered glass + cards */
+html[data-design='synthwave'] .glow-card::before {
+  background: linear-gradient(135deg, var(--color-glow-cyan), transparent 45%, transparent 55%, var(--color-glow-purple));
+  opacity: 0.85;
+}
+html[data-design='synthwave'] .glow-card:hover {
+  box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.25), 0 0 38px -12px rgba(232, 59, 214, 0.55);
+}
+
+/* ============================================================
+   3 · BRUTALIST — neo-brutalism, light, hard offset shadows
+   ============================================================ */
+html[data-design='brutalist'] {
+  /* inverted: paper background, black structure */
+  --color-dark-950: #f1ead9; /* page bg — paper */
+  --color-dark-900: #ece4d2;
+  --color-dark-800: #ffffff;
+  --color-dark-700: #111111;
+  --color-dark-600: #111111; /* scrollbar */
+  --color-dark-500: #333333; /* scrollbar hover */
+
+  /* accent → electric cobalt */
+  --color-accent-400: #5470ff;
+  --color-accent-500: #2347ff;
+  --color-accent-600: #1735d6;
+
+  /* glows → cobalt / yellow */
+  --color-glow-purple: #2347ff;
+  --color-glow-cyan: #ffe600;
+  --color-glow-blue: #2347ff;
+
+  /* hard black structure */
+  --color-surface: #ffffff;
+  --color-surface-hover: #ffffff;
+  --color-border: #0a0a0a;
+  --color-border-hover: #0a0a0a;
+
+  /* slate text → black on paper */
+  --color-slate-200: #111111;
+  --color-slate-300: #1a1a1a;
+  --color-slate-400: #333333;
+  --color-slate-500: #444444;
+  --color-slate-600: #555555;
+
+  /* sharp corners */
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0;
+  --radius-xl: 0; --radius-2xl: 0; --radius-3xl: 0; --radius-4xl: 0;
+}
+html[data-design='brutalist']:not([dir='rtl']) {
+  --font-sans: 'Space Grotesk', 'Inter Variable', system-ui, sans-serif;
+}
+html[data-design='brutalist'] { color: #0a0a0a; }
+html[data-design='brutalist'] .rounded-full,
+html[data-design='brutalist'] .rounded-\[2rem\] { border-radius: 0; }
+
+/* white headings → black ink on paper */
+html[data-design='brutalist'] .text-white,
+html[data-design='brutalist'] .text-dark-950 { color: #0a0a0a !important; }
+
+/* heavy, shouty headings */
+html[data-design='brutalist'] h1,
+html[data-design='brutalist'] h2,
+html[data-design='brutalist'] h3 {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* logo & partner marks are built for a dark canvas → black silhouettes */
+html[data-design='brutalist'] header img[src$='cloudzy-ai-icon.png'],
+html[data-design='brutalist'] footer img[src$='cloudzy-ai-icon.png'] { filter: brightness(0); }
+html[data-design='brutalist'] .partner-logo { filter: brightness(0); }
+
+/* faint dotted paper grid */
+html[data-design='brutalist'] body {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.07) 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+}
+
+/* kill the soft floating glow orbs */
+html[data-design='brutalist'] .glow-breathe,
+html[data-design='brutalist'] .glow-breathe-2,
+html[data-design='brutalist'] .glow-breathe-3 { display: none; }
+
+/* faint white-alpha fills → light grey so they read on paper */
+html[data-design='brutalist'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.05) !important; }
+html[data-design='brutalist'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.08) !important; }
+
+/* solid display text — no gradients */
+html[data-design='brutalist'] .text-gradient,
+html[data-design='brutalist'] .text-shimmer {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: #0a0a0a;
+}
+html[data-design='brutalist'] .text-gradient-vivid {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--color-accent-500);
+}
+
+/* glass surfaces → opaque white blocks, thick black border, no blur */
+html[data-design='brutalist'] .glass,
+html[data-design='brutalist'] .glass-heavy {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 3px solid #0a0a0a !important;
+}
+
+/* hard-edged cards: thick black border + offset shadow */
+html[data-design='brutalist'] .glow-card {
+  border: 3px solid #0a0a0a !important;
+  box-shadow: 7px 7px 0 #0a0a0a !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease !important;
+}
+html[data-design='brutalist'] .glow-card::before { display: none !important; }
+html[data-design='brutalist'] .glow-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 10px 10px 0 #0a0a0a !important;
+}
+
+/* buttons: solid yellow block, black text + border + hard shadow */
+html[data-design='brutalist'] .bg-gradient-to-r,
+html[data-design='brutalist'] .bg-white {
+  background-image: none !important;
+  background-color: var(--color-glow-cyan) !important; /* yellow */
+  color: #0a0a0a !important;
+  border: 3px solid #0a0a0a !important;
+  box-shadow: 5px 5px 0 #0a0a0a !important;
+}
+html[data-design='brutalist'] .bg-gradient-to-r:hover,
+html[data-design='brutalist'] .bg-white:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0 #0a0a0a !important;
+}
+
+/* process step circle → solid yellow, dark number */
+html[data-design='brutalist'] .bg-gradient-to-br.from-accent-500 {
+  background-image: none !important;
+  background-color: var(--color-glow-cyan) !important;
+  border: 3px solid #0a0a0a;
+}
+
+/* CTA panel → solid cobalt block with black frame */
+html[data-design='brutalist'] .bg-gradient-to-br.from-accent-600 {
+  background-image: none !important;
+  background-color: var(--color-accent-500) !important;
+  opacity: 1 !important;
+}
+html[data-design='brutalist'] .rounded-\[2rem\] { border: 3px solid #0a0a0a; }
+
+/* ============================================================
+   4 · EDITORIAL — luxury editorial, warm dark, serif
+   ============================================================ */
+html[data-design='editorial'] {
+  /* warm espresso surfaces */
+  --color-dark-950: #14100b;
+  --color-dark-900: #1c150d;
+  --color-dark-800: #251c12;
+  --color-dark-700: #3a2e20;
+  --color-dark-600: #4d3e2c;
+  --color-dark-500: #6b5740;
+
+  /* accent → gold */
+  --color-accent-400: #e4c46c;
+  --color-accent-500: #d4af37;
+  --color-accent-600: #b08e22;
+
+  /* glows → bronze / soft gold / brass */
+  --color-glow-purple: #c0824f;
+  --color-glow-cyan: #e8cf8f;
+  --color-glow-blue: #b8924a;
+
+  /* glass tinted warm gold */
+  --color-surface: rgba(212, 175, 55, 0.04);
+  --color-surface-hover: rgba(212, 175, 55, 0.08);
+  --color-border: rgba(212, 175, 55, 0.16);
+  --color-border-hover: rgba(212, 175, 55, 0.3);
+
+  /* slate text → warm cream / taupe */
+  --color-slate-200: #f4ecdd;
+  --color-slate-300: #d8c8ad;
+  --color-slate-400: #b09a78;
+  --color-slate-500: #8a7456;
+  --color-slate-600: #6e5a40;
+
+  /* refined, almost-square corners */
+  --radius-sm: 2px; --radius-md: 2px; --radius-lg: 3px;
+  --radius-xl: 3px; --radius-2xl: 4px; --radius-3xl: 6px; --radius-4xl: 8px;
+}
+html[data-design='editorial']:not([dir='rtl']) {
+  --font-sans: 'Spectral', Georgia, 'Times New Roman', serif;
+}
+html[data-design='editorial'] { color: #f4ecdd; }
+
+/* Playfair for headings + display numbers, Spectral for prose */
+html[data-design='editorial']:not([dir='rtl']) h1,
+html[data-design='editorial']:not([dir='rtl']) h2,
+html[data-design='editorial']:not([dir='rtl']) h3,
+html[data-design='editorial']:not([dir='rtl']) .text-gradient,
+html[data-design='editorial']:not([dir='rtl']) .text-gradient-vivid,
+html[data-design='editorial']:not([dir='rtl']) .text-shimmer {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* warm glass-heavy (cool navy → warm espresso) */
+html[data-design='editorial'] .glass-heavy {
+  background: rgba(20, 16, 11, 0.85) !important;
+  border-color: rgba(212, 175, 55, 0.18) !important;
+}
+
+/* thin gold hairline on cards, soft warm shadow */
+html[data-design='editorial'] .glow-card::before {
+  background: linear-gradient(135deg, var(--color-accent-500), transparent 50%, transparent 60%, var(--color-glow-purple));
+  opacity: 0.4;
+}
+html[data-design='editorial'] .glow-card { box-shadow: 0 22px 50px -32px rgba(0, 0, 0, 0.9); }
+
+/* gold buttons read better with dark ink */
+html[data-design='editorial'] .bg-gradient-to-r { color: var(--color-dark-950) !important; }
+
+/* process step circle (gold) → dark number for contrast */
+html[data-design='editorial'] .bg-gradient-to-br.from-accent-500 { color: var(--color-dark-900) !important; }
+
+/* CTA panel: swap the bright gold band for a deep espresso panel */
+html[data-design='editorial'] .bg-gradient-to-br.from-accent-600 {
+  background-image: linear-gradient(135deg, var(--color-dark-800), var(--color-dark-950)) !important;
+  opacity: 1 !important;
+}
