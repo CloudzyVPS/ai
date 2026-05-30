@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <script is:inline>
       (function () {
         var KEY = 'cloudzy-design';
-        var ALLOWED = ['main', 'synthwave', 'brutalist', 'editorial', 'bauhaus'];
+        var ALLOWED = ['main', 'synthwave', 'brutalist', 'editorial', 'bauhaus', 'cloudzy'];
         function pick() {
           try { var v = localStorage.getItem(KEY); return ALLOWED.indexOf(v) >= 0 ? v : 'main'; }
           catch (e) { return 'main'; }
