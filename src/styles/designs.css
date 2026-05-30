@@ -1056,4 +1056,238 @@ html[data-design='minimal'] .bg-dark-950\/30 { background-color: transparent !im
 html[data-design='minimal'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
 html[data-design='minimal'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.82) !important; }
 html[data-design='minimal'] .rounded-\[2rem\] .text-dark-950 { color: #111111 !important; }
+/* ============================================================
+   11 · AUTOBAHN — motorsport precision (carbon, tricolour blue/navy/red)
+   ------------------------------------------------------------
+   Inspired by German M-performance motorsport (whitelabel — no brand
+   name, roundel, or proprietary font): carbon/graphite surfaces, a
+   precise blue primary, and the signature three-stripe blue→navy→red
+   accent on the process tiles, card edges and display text. Space
+   Grotesk (already loaded) gives an engineered, technical feel.
+   ============================================================ */
+html[data-design='autobahn'] {
+  /* carbon / graphite surfaces */
+  --color-dark-950: #0d0f12; /* page bg */
+  --color-dark-900: #14171b;
+  --color-dark-800: #1a1e23;
+  --color-dark-700: #272c33;
+  --color-dark-600: #39414a;
+  --color-dark-500: #5b6571;
 
+  /* accent → motorsport blue */
+  --color-accent-400: #3a9be0;
+  --color-accent-500: #0a6bd0;
+  --color-accent-600: #074f9c;
+
+  /* glows → the tricolour: light blue / navy / (red via vivid) */
+  --color-glow-purple: #16284f; /* navy */
+  --color-glow-cyan: #2e9bdf;   /* light blue */
+  --color-glow-blue: #0a6bd0;
+
+  /* glass → carbon panels, cool hairline */
+  --color-surface: rgba(46, 155, 223, 0.05);
+  --color-surface-hover: rgba(46, 155, 223, 0.09);
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-hover: rgba(46, 155, 223, 0.42);
+
+  /* text → silver / white on carbon */
+  --color-slate-200: #eef1f4;
+  --color-slate-300: #cdd3da;
+  --color-slate-400: #9aa3ad;
+  --color-slate-500: #79828d;
+  --color-slate-600: #5b6571;
+
+  /* precise, small corners */
+  --radius-sm: 1px; --radius-md: 2px; --radius-lg: 3px;
+  --radius-xl: 3px; --radius-2xl: 4px; --radius-3xl: 6px; --radius-4xl: 8px;
+}
+html[data-design='autobahn']:not([dir='rtl']) {
+  --font-sans: 'Space Grotesk', 'Inter Variable', system-ui, sans-serif;
+}
+html[data-design='autobahn']:not([dir='rtl']) h1,
+html[data-design='autobahn']:not([dir='rtl']) h2,
+html[data-design='autobahn']:not([dir='rtl']) h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* display gradients → silver→blue, and the tricolour on the vivid one */
+html[data-design='autobahn'] .text-gradient,
+html[data-design='autobahn'] .text-shimmer {
+  background: linear-gradient(135deg, #eef1f4 0%, #2e9bdf 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-design='autobahn'] .text-gradient-vivid {
+  background: linear-gradient(110deg, #2e9bdf 0%, #16284f 52%, #e7222a 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* card hairline → tricolour edge */
+html[data-design='autobahn'] .glow-card::before {
+  background: linear-gradient(110deg, #2e9bdf, #16284f 52%, #e7222a);
+  opacity: 0.6;
+}
+html[data-design='autobahn'] .glow-card { box-shadow: 0 20px 50px -28px rgba(0, 0, 0, 0.9); }
+
+/* primary buttons → precise blue, blue under-glow */
+html[data-design='autobahn'] .bg-gradient-to-r {
+  background-image: linear-gradient(110deg, #0a6bd0, #074f9c) !important;
+  box-shadow: 0 6px 20px -8px rgba(10, 107, 208, 0.6);
+}
+
+/* the signature three-stripe palette on the process step tiles */
+html[data-design='autobahn'] .reveal-stagger > div:nth-child(1) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #2e9bdf !important; color: #08203a !important; } /* light blue — dark ink */
+html[data-design='autobahn'] .reveal-stagger > div:nth-child(2) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #16284f !important; } /* navy */
+html[data-design='autobahn'] .reveal-stagger > div:nth-child(3) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #e7222a !important; } /* red */
+html[data-design='autobahn'] .reveal-stagger > div:nth-child(4) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #0a6bd0 !important; } /* blue */
+html[data-design='autobahn'] .reveal-stagger > div:nth-child(5) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #2e9bdf !important; color: #08203a !important; } /* light blue */
+
+/* recolour hero glow orbs → blue / navy / light blue */
+html[data-design='autobahn'] .bg-glow-purple\/15,
+html[data-design='autobahn'] .bg-glow-purple\/10 { background-color: rgba(22, 40, 79, 0.4) !important; }
+html[data-design='autobahn'] .bg-glow-cyan\/10 { background-color: rgba(46, 155, 223, 0.14) !important; }
+html[data-design='autobahn'] .bg-glow-blue\/10 { background-color: rgba(10, 107, 208, 0.14) !important; }
+
+/* CTA band → precise blue with a tricolour feel via the scrim */
+html[data-design='autobahn'] .bg-gradient-to-br.from-accent-600 {
+  background-image: linear-gradient(110deg, #0a6bd0 0%, #074f9c 60%, #16284f 100%) !important;
+  opacity: 1 !important;
+}
+html[data-design='autobahn'] .rounded-\[2rem\] .text-dark-950 { color: #0a6bd0 !important; }
+
+/* ============================================================
+   12 · CLAY — warm minimal (cream paper, clay accent, serif display)
+   ------------------------------------------------------------
+   Inspired by warm-minimal AI-lab branding (whitelabel — no company
+   name or proprietary font): cream-paper surfaces, a clay/terracotta
+   accent, warm near-black text, generous calm, and a soft Fraunces
+   serif for display over a clean Inter body.
+   ============================================================ */
+html[data-design='clay'] {
+  /* warm cream surfaces */
+  --color-dark-950: #faf9f5; /* page bg — warm white */
+  --color-dark-900: #f0eee6; /* cream — alt surface */
+  --color-dark-800: #ffffff; /* cards */
+  --color-dark-700: #e6e2d6; /* warm hairline border */
+  --color-dark-600: #d2ccba; /* scrollbar */
+  --color-dark-500: #a89f8a; /* scrollbar hover */
+
+  /* accent → clay / terracotta */
+  --color-accent-400: #d3835f;
+  --color-accent-500: #c1632f; /* clay */
+  --color-accent-600: #a44e21;
+
+  /* glows kept in the warm clay family */
+  --color-glow-purple: #b5704a;
+  --color-glow-cyan: #d99a6c;
+  --color-glow-blue: #c1632f;
+
+  /* glass → white cards, warm hairline */
+  --color-surface: #ffffff;
+  --color-surface-hover: #faf9f5;
+  --color-border: #e6e2d6;
+  --color-border-hover: #d2ccba;
+
+  /* text → warm near-black / taupe on cream */
+  --color-slate-200: #1a1915; /* headings */
+  --color-slate-300: #2c2a24;
+  --color-slate-400: #5f594c; /* body */
+  --color-slate-500: #837b6a;
+  --color-slate-600: #a89f8a;
+  /* friendly, default-ish curves */
+}
+html[data-design='clay']:not([dir='rtl']) {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
+}
+html[data-design='clay'] { color: #1a1915; }
+
+/* Fraunces serif for headings + display (Inter for prose) */
+html[data-design='clay']:not([dir='rtl']) h1,
+html[data-design='clay']:not([dir='rtl']) h2,
+html[data-design='clay']:not([dir='rtl']) h3,
+html[data-design='clay']:not([dir='rtl']) .text-gradient,
+html[data-design='clay']:not([dir='rtl']) .text-gradient-vivid,
+html[data-design='clay']:not([dir='rtl']) .text-shimmer {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* white display utilities → warm ink on cream */
+html[data-design='clay'] .text-white { color: #1a1915 !important; }
+
+/* logos/partners → warm grey on cream */
+html[data-design='clay'] .partner-logo { filter: brightness(0) invert(0.4); }
+html[data-design='clay'] .partner-logo:hover { filter: brightness(0) invert(0.25); }
+
+/* calm warm canvas — no ambient orbs */
+html[data-design='clay'] .glow-breathe,
+html[data-design='clay'] .glow-breathe-2,
+html[data-design='clay'] .glow-breathe-3 { display: none; }
+
+/* faint white-alpha fills → warm tints */
+html[data-design='clay'] .bg-white\/5 { background-color: rgba(26, 25, 21, 0.04) !important; }
+html[data-design='clay'] .bg-white\/10 { background-color: rgba(26, 25, 21, 0.06) !important; }
+
+/* hero photo wash → cream so warm copy stays crisp */
+html[data-design='clay'] .bg-dark-950\/75 { background-color: rgba(250, 249, 245, 0.9) !important; }
+
+/* display gradients → clay tones */
+html[data-design='clay'] .text-gradient,
+html[data-design='clay'] .text-shimmer {
+  background: linear-gradient(135deg, #1a1915 0%, #c1632f 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-design='clay'] .text-gradient-vivid {
+  background: linear-gradient(135deg, #c1632f 0%, #a44e21 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* glass → white cards, warm hairline, soft warm shadow */
+html[data-design='clay'] .glass,
+html[data-design='clay'] .glass-heavy {
+  background: #ffffff !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  border: 1px solid #e6e2d6 !important;
+  box-shadow: 0 1px 3px rgba(26, 25, 21, 0.05);
+}
+html[data-design='clay'] .glass:hover { background: #faf9f5 !important; border-color: #d2ccba !important; }
+
+/* cards → warm hairline + soft shadow; clay border + lift on hover */
+html[data-design='clay'] .glow-card {
+  border: 1px solid #e6e2d6 !important;
+  box-shadow: 0 1px 3px rgba(26, 25, 21, 0.05) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+html[data-design='clay'] .glow-card::before { display: none !important; }
+html[data-design='clay'] .glow-card:hover {
+  border-color: #e0b59c !important;
+  box-shadow: 0 12px 28px -10px rgba(193, 99, 47, 0.28) !important;
+}
+
+/* primary buttons → solid clay, cream text */
+html[data-design='clay'] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: #c1632f !important;
+  color: #faf9f5 !important;
+  box-shadow: 0 6px 18px -8px rgba(193, 99, 47, 0.5);
+}
+html[data-design='clay'] .bg-gradient-to-r:hover { background-color: #a44e21 !important; }
+
+/* process step tile → solid clay, cream number */
+html[data-design='clay'] .bg-gradient-to-br.from-accent-500 {
+  background-image: none !important;
+  background-color: #c1632f !important;
+  color: #faf9f5 !important;
+}
+
+/* CTA band → warm clay panel with cream copy + white button */
+html[data-design='clay'] .bg-gradient-to-br.from-accent-600 {
+  background-image: linear-gradient(135deg, #c1632f, #a44e21) !important;
+  opacity: 1 !important;
+}
+html[data-design='clay'] .bg-dark-950\/30 { background-color: rgba(0, 0, 0, 0.10) !important; }
+html[data-design='clay'] .rounded-\[2rem\] .text-white { color: #faf9f5 !important; }
+html[data-design='clay'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.85) !important; }
+html[data-design='clay'] .rounded-\[2rem\] .text-dark-950 { color: #c1632f !important; }
