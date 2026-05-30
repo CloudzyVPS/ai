@@ -469,54 +469,54 @@ html[data-design='bauhaus'] .rounded-\[2rem\] { border: 2px solid #141414; }
 /* ============================================================
    6 · CLOUDZY — clean, lean, enterprise SaaS (mirrors www.cloudzy.ai)
    ------------------------------------------------------------
-   Reverse-engineered from the live corporate site: white / slate-50
-   surfaces, deep navy ink (#0a2540), a blue-600 primary (#2563eb),
-   slate borders, Inter body + Plus Jakarta Sans headings (both already
-   loaded by global.css — no extra webfont needed).
+   Tokens extracted from the live corporate site's own CSS:
+   deep navy #072032, ink #1c1d20, slate-grey body #5c6972,
+   electric-blue primary #064af3, light divider #ebedef, on white /
+   #f9f9f9 surfaces, set in DM Sans (the site's primary typeface).
    ============================================================ */
 html[data-design='cloudzy'] {
-  /* light surfaces — white page, slate-50 alt, white cards */
+  /* light surfaces — white page, soft-grey alt, white cards */
   --color-dark-950: #ffffff; /* page background */
-  --color-dark-900: #f8fafc; /* slate-50 — dropdowns / alt surface */
+  --color-dark-900: #f9f9f9; /* alt surface / dropdowns */
   --color-dark-800: #ffffff; /* card surface */
-  --color-dark-700: #e2e8f0; /* slate-200 — borders */
-  --color-dark-600: #cbd5e1; /* slate-300 — scrollbar */
-  --color-dark-500: #94a3b8; /* slate-400 — scrollbar hover */
+  --color-dark-700: #ebedef; /* hairline borders */
+  --color-dark-600: #d5d8dc; /* scrollbar */
+  --color-dark-500: #99a1a8; /* scrollbar hover */
 
-  /* accent → Cloudzy blue (blue-500/600/700) */
-  --color-accent-400: #3b82f6;
-  --color-accent-500: #2563eb;
-  --color-accent-600: #1d4ed8;
+  /* accent → Cloudzy electric blue (#064af3, used for links/CTAs) */
+  --color-accent-400: #3a6ff6;
+  --color-accent-500: #064af3;
+  --color-accent-600: #0540d0;
 
-  /* glows → kept in the blue family so every gradient stays on-brand */
-  --color-glow-purple: #1e40af; /* blue-800 */
-  --color-glow-cyan: #3b82f6;   /* blue-500 */
-  --color-glow-blue: #2563eb;   /* blue-600 */
+  /* glows → blue + navy so every gradient stays on-brand */
+  --color-glow-purple: #072032; /* navy (gradient depth) */
+  --color-glow-cyan: #3a6ff6;   /* light blue */
+  --color-glow-blue: #064af3;   /* electric blue */
 
-  /* glass → clean white cards with slate hairlines */
+  /* glass → clean white cards with light hairlines */
   --color-surface: #ffffff;
-  --color-surface-hover: #f8fafc;
-  --color-border: #e2e8f0;       /* slate-200 */
-  --color-border-hover: #cbd5e1; /* slate-300 */
+  --color-surface-hover: #f9f9f9;
+  --color-border: #ebedef;       /* light divider */
+  --color-border-hover: #d5d8dc;
 
-  /* slate text ramp → navy / slate on white (mirrors the real site) */
-  --color-slate-200: #0f172a; /* near-black headings */
-  --color-slate-300: #1e293b; /* slate-800 */
-  --color-slate-400: #475569; /* slate-600 — muted body */
-  --color-slate-500: #64748b; /* slate-500 */
-  --color-slate-600: #94a3b8; /* slate-400 — faint */
+  /* text ramp → ink / navy / slate-grey on white (the real site's greys) */
+  --color-slate-200: #1c1d20; /* primary ink (body base) */
+  --color-slate-300: #072032; /* navy (stronger) */
+  --color-slate-400: #5c6972; /* slate-grey — muted body */
+  --color-slate-500: #69727d; /* secondary grey */
+  --color-slate-600: #99a1a8; /* faint */
   /* radius intentionally left at defaults — polished, moderately rounded */
 }
 html[data-design='cloudzy']:not([dir='rtl']) {
-  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'DM Sans', 'Inter Variable', system-ui, -apple-system, sans-serif;
 }
-html[data-design='cloudzy'] { color: #0f172a; }
+html[data-design='cloudzy'] { color: #1c1d20; }
 
-/* Plus Jakarta Sans for headings + display text (Inter for prose) */
+/* DM Sans, navy, tight — for headings + display text */
 html[data-design='cloudzy']:not([dir='rtl']) h1,
 html[data-design='cloudzy']:not([dir='rtl']) h2,
 html[data-design='cloudzy']:not([dir='rtl']) h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter Variable', sans-serif;
+  font-family: 'DM Sans', 'Inter Variable', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -537,16 +537,16 @@ html[data-design='cloudzy'] .glow-breathe-3 { display: none; }
 html[data-design='cloudzy'] .bg-white\/5 { background-color: rgba(15, 23, 42, 0.04) !important; }
 html[data-design='cloudzy'] .bg-white\/10 { background-color: rgba(15, 23, 42, 0.07) !important; }
 
-/* display gradients → navy→blue (was white→cyan, invisible on white) */
+/* display gradients → navy→electric-blue (was white→cyan, invisible on white) */
 html[data-design='cloudzy'] .text-gradient,
 html[data-design='cloudzy'] .text-shimmer {
-  background: linear-gradient(135deg, #0a2540 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #072032 0%, #064af3 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 html[data-design='cloudzy'] .text-gradient-vivid {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #064af3 0%, #072032 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -592,6 +592,6 @@ html[data-design='cloudzy'] .bg-gradient-to-r { box-shadow: 0 6px 18px -6px rgba
    and swap the white scrim for a slight navy one so white copy pops */
 html[data-design='cloudzy'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
 html[data-design='cloudzy'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.85) !important; }
-html[data-design='cloudzy'] .bg-dark-950\/30 { background-color: rgba(10, 37, 64, 0.22) !important; }
+html[data-design='cloudzy'] .bg-dark-950\/30 { background-color: rgba(7, 32, 50, 0.28) !important; }
 /* the CTA's white button → navy text on white (already correct), ensure arrow ink */
-html[data-design='cloudzy'] .rounded-\[2rem\] .text-dark-950 { color: #0a2540 !important; }
+html[data-design='cloudzy'] .rounded-\[2rem\] .text-dark-950 { color: #072032 !important; }
