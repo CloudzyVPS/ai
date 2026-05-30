@@ -595,3 +595,232 @@ html[data-design='cloudzy'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255,
 html[data-design='cloudzy'] .bg-dark-950\/30 { background-color: rgba(7, 32, 50, 0.28) !important; }
 /* the CTA's white button → navy text on white (already correct), ensure arrow ink */
 html[data-design='cloudzy'] .rounded-\[2rem\] .text-dark-950 { color: #072032 !important; }
+
+/* ============================================================
+   7 · MICROSOFT — Fluent design (neutral grey, Fluent blue, Segoe UI)
+   ------------------------------------------------------------
+   Microsoft Fluent / Office / Azure look: neutral-grey surfaces,
+   themePrimary blue #0078d4, Segoe UI (a system font on most devices
+   — lean, no webfont), restrained corners, soft elevation shadows,
+   and the iconic four-square brand colours on the process tiles.
+   ============================================================ */
+html[data-design='microsoft'] {
+  /* Fluent neutral light surfaces */
+  --color-dark-950: #f3f2f1; /* neutralLighter — page bg */
+  --color-dark-900: #faf9f8; /* neutralLighterAlt — alt surface */
+  --color-dark-800: #ffffff; /* white — cards */
+  --color-dark-700: #e1dfdd; /* neutralLight — borders */
+  --color-dark-600: #c8c6c4; /* scrollbar */
+  --color-dark-500: #a19f9d; /* scrollbar hover */
+
+  /* accent → Fluent blue */
+  --color-accent-400: #2b88d8;
+  --color-accent-500: #0078d4; /* themePrimary */
+  --color-accent-600: #106ebe; /* themeDark */
+
+  /* glows kept blue/cyan (Microsoft cyan square) */
+  --color-glow-purple: #0078d4;
+  --color-glow-cyan: #00a4ef;
+  --color-glow-blue: #0078d4;
+
+  /* glass → white cards, neutral hairline */
+  --color-surface: #ffffff;
+  --color-surface-hover: #faf9f8;
+  --color-border: #e1dfdd;
+  --color-border-hover: #c8c6c4;
+
+  /* text → Fluent neutral ramp on light */
+  --color-slate-200: #201f1e; /* neutralPrimary — headings */
+  --color-slate-300: #323130; /* neutralDark */
+  --color-slate-400: #605e5c; /* neutralSecondary — body */
+  --color-slate-500: #797775; /* neutralTertiary */
+  --color-slate-600: #a19f9d;
+
+  /* Fluent uses small, restrained corners */
+  --radius-sm: 2px; --radius-md: 2px; --radius-lg: 4px;
+  --radius-xl: 4px; --radius-2xl: 4px; --radius-3xl: 6px; --radius-4xl: 8px;
+}
+html[data-design='microsoft']:not([dir='rtl']) {
+  --font-sans: 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+html[data-design='microsoft'] { color: #201f1e; }
+html[data-design='microsoft']:not([dir='rtl']) h1,
+html[data-design='microsoft']:not([dir='rtl']) h2,
+html[data-design='microsoft']:not([dir='rtl']) h3 {
+  font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 600; /* Fluent semibold */
+  letter-spacing: -0.01em;
+}
+
+/* white display utilities → neutral ink on light */
+html[data-design='microsoft'] .text-white { color: #201f1e !important; }
+
+/* logos/partners read as grey on light */
+html[data-design='microsoft'] .partner-logo { filter: brightness(0) invert(0.45); }
+html[data-design='microsoft'] .partner-logo:hover { filter: brightness(0) invert(0.3); }
+
+/* clean Fluent canvas — no ambient orbs */
+html[data-design='microsoft'] .glow-breathe,
+html[data-design='microsoft'] .glow-breathe-2,
+html[data-design='microsoft'] .glow-breathe-3 { display: none; }
+
+/* faint white-alpha fills → neutral tints */
+html[data-design='microsoft'] .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; }
+html[data-design='microsoft'] .bg-white\/10 { background-color: rgba(0, 0, 0, 0.06) !important; }
+
+/* hero photo wash → near-white so neutral copy stays crisp */
+html[data-design='microsoft'] .bg-dark-950\/75 { background-color: rgba(243, 242, 241, 0.92) !important; }
+
+/* display gradients → Fluent blue (was white→cyan, invisible on light) */
+html[data-design='microsoft'] .text-gradient,
+html[data-design='microsoft'] .text-shimmer {
+  background: linear-gradient(135deg, #201f1e 0%, #0078d4 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-design='microsoft'] .text-gradient-vivid {
+  background: linear-gradient(135deg, #0078d4 0%, #004e8c 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* glass → white cards, neutral hairline, Fluent depth shadow */
+html[data-design='microsoft'] .glass,
+html[data-design='microsoft'] .glass-heavy {
+  background: #ffffff !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  border: 1px solid #e1dfdd !important;
+  box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.10), 0 0.3px 0.9px rgba(0, 0, 0, 0.07);
+}
+html[data-design='microsoft'] .glass:hover { background: #faf9f8 !important; border-color: #c8c6c4 !important; }
+
+/* cards → Fluent elevation, deeper lift on hover */
+html[data-design='microsoft'] .glow-card {
+  border: 1px solid #e1dfdd !important;
+  box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.10), 0 0.3px 0.9px rgba(0, 0, 0, 0.07) !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+html[data-design='microsoft'] .glow-card::before { display: none !important; }
+html[data-design='microsoft'] .glow-card:hover {
+  box-shadow: 0 6.4px 14.4px rgba(0, 0, 0, 0.13), 0 1.2px 3.6px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* primary buttons → solid Fluent blue, flat */
+html[data-design='microsoft'] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: #0078d4 !important;
+  color: #ffffff !important;
+  box-shadow: none;
+}
+html[data-design='microsoft'] .bg-gradient-to-r:hover { background-color: #106ebe !important; }
+
+/* the iconic four Microsoft squares on the process step tiles
+   (.from-accent-500 circles only exist in the Process section) */
+html[data-design='microsoft'] .reveal-stagger > div:nth-child(1) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #f25022 !important; } /* red */
+html[data-design='microsoft'] .reveal-stagger > div:nth-child(2) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #7fba00 !important; } /* green */
+html[data-design='microsoft'] .reveal-stagger > div:nth-child(3) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #00a4ef !important; } /* blue */
+html[data-design='microsoft'] .reveal-stagger > div:nth-child(4) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #ffb900 !important; color: #201f1e !important; } /* yellow — dark number */
+html[data-design='microsoft'] .reveal-stagger > div:nth-child(5) .bg-gradient-to-br.from-accent-500 { background-image: none !important; background-color: #0078d4 !important; } /* blue */
+
+/* CTA band → solid Fluent blue with white copy */
+html[data-design='microsoft'] .bg-gradient-to-br.from-accent-600 {
+  background-image: none !important; background-color: #0078d4 !important; opacity: 1 !important;
+}
+html[data-design='microsoft'] .bg-dark-950\/30 { background-color: rgba(0, 0, 0, 0.12) !important; }
+html[data-design='microsoft'] .rounded-\[2rem\] .text-white { color: #ffffff !important; }
+html[data-design='microsoft'] .rounded-\[2rem\] .text-white\/80 { color: rgba(255, 255, 255, 0.85) !important; }
+html[data-design='microsoft'] .rounded-\[2rem\] .text-dark-950 { color: #0078d4 !important; }
+
+/* ============================================================
+   8 · DUBAI — Gulf luxury (midnight teal, desert gold, turquoise)
+   ------------------------------------------------------------
+   Dubai-skyline-at-night opulence: deep midnight-teal surfaces, desert
+   gold primary, Gulf-turquoise secondary, warm cream text, and Marcellus
+   (architectural Roman caps) for display — distinct from Atelier's warm
+   espresso + Playfair. Dark base, so few helper overrides are needed.
+   ============================================================ */
+html[data-design='dubai'] {
+  /* deep midnight-teal surfaces */
+  --color-dark-950: #06181d; /* page bg */
+  --color-dark-900: #0a2026;
+  --color-dark-800: #0e2a31;
+  --color-dark-700: #163a42;
+  --color-dark-600: #1f4d56;
+  --color-dark-500: #2f6b75;
+
+  /* accent → desert gold */
+  --color-accent-400: #e6c45a;
+  --color-accent-500: #d4af37;
+  --color-accent-600: #b8902a;
+
+  /* glows → gold + Gulf turquoise */
+  --color-glow-purple: #b8902a; /* deep gold */
+  --color-glow-cyan: #1fc8b6;   /* turquoise */
+  --color-glow-blue: #d4af37;   /* gold */
+
+  /* glass → teal panels with gold hairline */
+  --color-surface: rgba(212, 175, 55, 0.05);
+  --color-surface-hover: rgba(212, 175, 55, 0.09);
+  --color-border: rgba(212, 175, 55, 0.18);
+  --color-border-hover: rgba(31, 200, 182, 0.4);
+
+  /* text → warm cream / gold-grey on teal */
+  --color-slate-200: #f5efe0; /* cream */
+  --color-slate-300: #e3d9c2;
+  --color-slate-400: #b8b0a0; /* muted body */
+  --color-slate-500: #8f897b;
+  --color-slate-600: #6f6a5e;
+
+  /* graceful, slightly larger curves */
+  --radius-2xl: 10px; --radius-3xl: 14px; --radius-4xl: 18px;
+}
+html[data-design='dubai']:not([dir='rtl']) {
+  --font-sans: 'Jost', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Marcellus for headings + display text (Jost for prose) */
+html[data-design='dubai']:not([dir='rtl']) h1,
+html[data-design='dubai']:not([dir='rtl']) h2,
+html[data-design='dubai']:not([dir='rtl']) h3,
+html[data-design='dubai']:not([dir='rtl']) .text-gradient,
+html[data-design='dubai']:not([dir='rtl']) .text-gradient-vivid,
+html[data-design='dubai']:not([dir='rtl']) .text-shimmer {
+  font-family: 'Marcellus', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* display gradients → gold shimmer + turquoise */
+html[data-design='dubai'] .text-gradient,
+html[data-design='dubai'] .text-shimmer {
+  background: linear-gradient(135deg, #f5efe0 0%, #e6c45a 45%, #d4af37 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-design='dubai'] .text-gradient-vivid {
+  background: linear-gradient(135deg, #e6c45a 0%, #1fc8b6 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* gold hairline frame on cards, deep shadow */
+html[data-design='dubai'] .glow-card::before {
+  background: linear-gradient(135deg, #d4af37, transparent 45%, transparent 55%, #1fc8b6);
+  opacity: 0.55;
+}
+html[data-design='dubai'] .glow-card { box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.9); }
+
+/* gold buttons read better with dark ink */
+html[data-design='dubai'] .bg-gradient-to-r { color: #0a1f24 !important; }
+
+/* process step tile (gold gradient) → dark ink number */
+html[data-design='dubai'] .bg-gradient-to-br.from-accent-500 { color: #0a1f24 !important; }
+
+/* recolour the hero glow orbs → gold + turquoise (was purple/blue/cyan) */
+html[data-design='dubai'] .bg-glow-purple\/15,
+html[data-design='dubai'] .bg-glow-purple\/10 { background-color: rgba(212, 175, 55, 0.16) !important; }
+html[data-design='dubai'] .bg-glow-cyan\/10 { background-color: rgba(31, 200, 182, 0.12) !important; }
+html[data-design='dubai'] .bg-glow-blue\/10 { background-color: rgba(212, 175, 55, 0.1) !important; }
+
+/* CTA: swap the bright gold band for a deep teal panel w/ gold ring */
+html[data-design='dubai'] .bg-gradient-to-br.from-accent-600 {
+  background-image: linear-gradient(135deg, #0e2a31, #06181d) !important;
+  opacity: 1 !important;
+}
+html[data-design='dubai'] .rounded-\[2rem\] { border: 1px solid rgba(212, 175, 55, 0.35); }
